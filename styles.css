@@ -223,7 +223,7 @@ body::before {
 
 @media (max-width: 640px) {
     .logo-image {
-        max-width: 100px;
+        max-width: 80px;
     }
 }
 
@@ -252,8 +252,8 @@ section.relative {
 
 @media (max-width: 640px) {
     section.relative {
-        height: 60vh;
-        min-height: 400px;
+        height: 50vh;
+        min-height: 300px;
     }
 }
 
@@ -280,7 +280,7 @@ section.relative {
 
 @media (max-width: 640px) {
     .circle-item {
-        --circling-radius: 90px;
+        --circling-radius: 75px;
         --circling-duration: 25s;
     }
 }
@@ -313,8 +313,8 @@ section.relative {
 
 @media (max-width: 640px) {
     .circle-image {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
         border-radius: 8px;
     }
 }
@@ -433,9 +433,17 @@ section.relative {
 @media (max-width: 640px) {
     .mobile-newsletter-toggle {
         display: flex;
-        bottom: calc(6rem * 2 + 8rem);
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .mobile-newsletter-toggle svg {
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -470,8 +478,8 @@ section.relative {
 
 @media (max-width: 640px) {
     .newsletter-section {
-        padding: 3rem 1rem 5rem;
-        min-height: 250px;
+        padding: 2rem 1rem 3rem;
+        min-height: 200px;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
@@ -485,7 +493,7 @@ section.relative {
         max-height: 1000px;
         opacity: 1;
         transform: translateY(0);
-        padding: 3rem 1rem 5rem;
+        padding: 2rem 1rem 3rem;
     }
 }
 
@@ -518,11 +526,11 @@ section.relative {
 
 @media (max-width: 640px) {
     .newsletter-text {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
         max-width: 100%;
         padding: 0 0.5rem;
-        line-height: 1.3;
+        line-height: 1.2;
     }
 }
 
@@ -852,6 +860,7 @@ section.relative {
 }
 
 
+
 .bottom-text p {
     line-height: 1;
     width: 100%;
@@ -889,7 +898,7 @@ section.relative {
 
 @media (max-width: 640px) {
     .bottom-text {
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
         justify-content: flex-start;
         padding-left: 1rem;
     }
@@ -899,7 +908,7 @@ section.relative {
     }
     
     .bottom-text span {
-        font-size: 6rem;
+        font-size: 4.5rem;
         letter-spacing: 0.02em;
         white-space: normal !important;
     }
@@ -912,7 +921,7 @@ section.relative {
     }
     
     .bottom-word {
-        font-size: 6rem;
+        font-size: 4.5rem;
         letter-spacing: 0.02em;
         display: inline-block;
         line-height: 0.7;
