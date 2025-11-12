@@ -12,6 +12,15 @@ html {
     scrollbar-width: none;  /* Firefox */
 }
 
+@media (max-width: 640px) {
+    html {
+        overflow: hidden;
+        height: 100vh;
+        position: fixed;
+        width: 100%;
+    }
+}
+
 /* Hide default scrollbar - Webkit */
 html::-webkit-scrollbar {
     width: 0px;
@@ -44,6 +53,15 @@ body {
     padding: 0;
     min-height: 100vh;
     position: relative;
+}
+
+@media (max-width: 640px) {
+    body {
+        overflow: hidden;
+        height: 100vh;
+        position: fixed;
+        width: 100%;
+    }
 }
 
 body::before {
@@ -132,7 +150,8 @@ body::before {
 @media (max-width: 640px) {
     .top-social-buttons {
         top: 1rem;
-        right: 1rem;
+        left: 1rem;
+        right: auto;
         gap: 0.75rem;
     }
     
@@ -183,6 +202,15 @@ body::before {
     min-height: 100vh;
     background: transparent;
     z-index: 10;
+}
+
+@media (max-width: 640px) {
+    .main-content {
+        height: 100vh;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
 }
 
 /* Logo Section */
@@ -252,8 +280,9 @@ section.relative {
 
 @media (max-width: 640px) {
     section.relative {
-        height: 50vh;
-        min-height: 300px;
+        height: 45vh;
+        min-height: 0;
+        max-height: 45vh;
     }
 }
 
@@ -478,8 +507,8 @@ section.relative {
 
 @media (max-width: 640px) {
     .newsletter-section {
-        padding: 2rem 1rem 3rem;
-        min-height: 200px;
+        padding: 1.5rem 1rem 2rem;
+        min-height: 0;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
@@ -490,10 +519,11 @@ section.relative {
     }
     
     .newsletter-section.newsletter-visible {
-        max-height: 1000px;
+        max-height: 50vh;
         opacity: 1;
         transform: translateY(0);
-        padding: 2rem 1rem 3rem;
+        padding: 1.5rem 1rem 2rem;
+        overflow-y: auto;
     }
 }
 
@@ -733,7 +763,9 @@ section.relative {
 
 @media (max-width: 640px) {
     .footer {
-        padding: 1.5rem 1rem 0;
+        padding: 0.5rem 1rem 0;
+        position: fixed;
+        bottom: 0;
     }
 }
 
@@ -898,9 +930,11 @@ section.relative {
 
 @media (max-width: 640px) {
     .bottom-text {
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.25rem;
         justify-content: flex-start;
         padding-left: 1rem;
+        height: 100vh;
+        max-height: 100vh;
     }
     
     .bottom-text p {
@@ -908,7 +942,7 @@ section.relative {
     }
     
     .bottom-text span {
-        font-size: 4.5rem;
+        font-size: 4rem;
         letter-spacing: 0.02em;
         white-space: normal !important;
     }
@@ -916,15 +950,15 @@ section.relative {
     .bottom-text-content {
         white-space: normal !important;
         display: block;
-        line-height: 0.7;
+        line-height: 0.65;
         text-align: left;
     }
     
     .bottom-word {
-        font-size: 4.5rem;
+        font-size: 4rem;
         letter-spacing: 0.02em;
         display: inline-block;
-        line-height: 0.7;
+        line-height: 0.65;
     }
     
     .mobile-break {
