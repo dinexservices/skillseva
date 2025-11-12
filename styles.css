@@ -149,25 +149,37 @@ body::before {
 /* Mobile Responsive Styles */
 @media (max-width: 640px) {
     .top-social-buttons {
-        top: 1rem;
-        left: 1rem;
+        top: auto;
+        bottom: auto;
+        left: 50%;
         right: auto;
-        gap: 0.75rem;
+        transform: translateX(-50%);
+        gap: 1rem;
+        position: fixed;
+        top: calc(50% + 3rem);
+        flex-direction: row;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    
+    .top-social-buttons.social-hidden {
+        opacity: 0;
+        pointer-events: none;
     }
     
     .social-btn {
-        width: 2.75rem;
-        height: 2.75rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
     
     .social-btn svg {
-        width: 16px;
-        height: 16px;
+        width: 22px;
+        height: 22px;
     }
     
     .social-icon {
-        width: 16px;
-        height: 16px;
+        width: 22px;
+        height: 22px;
     }
 }
 
@@ -516,6 +528,7 @@ section.relative {
         transition: all 0.4s ease;
         padding-top: 0;
         padding-bottom: 0;
+        margin-top: 0;
     }
     
     .newsletter-section.newsletter-visible {
@@ -524,6 +537,7 @@ section.relative {
         transform: translateY(0);
         padding: 1.5rem 1rem 2rem;
         overflow-y: auto;
+        margin-top: 5rem;
     }
 }
 

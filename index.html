@@ -21,11 +21,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             const toggleButton = document.querySelector('.mobile-newsletter-toggle');
             const newsletterSection = document.getElementById('newsletter-section');
+            const socialButtons = document.querySelector('.top-social-buttons');
             
             if (toggleButton && newsletterSection) {
                 toggleButton.addEventListener('click', function() {
                     newsletterSection.classList.toggle('newsletter-visible');
                     toggleButton.classList.toggle('arrow-rotated');
+                    
+                    // Hide/show social media icons
+                    if (socialButtons) {
+                        socialButtons.classList.toggle('social-hidden');
+                    }
                 });
             }
         });
