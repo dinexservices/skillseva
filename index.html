@@ -2,313 +2,175 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SkillSeva - Coming Soon</title>
-    <meta name="description" content="SkillSeva - Coming Soon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSeva | Accelerate Your Career</title>
+    <meta name="description" content="SkillSeva brings the top 1% of operators together to mentor ambitious professionals through immersive cohort-based programs.">
     <link rel="icon" type="image/png" href="SkillSeva Logo.png">
     <link rel="apple-touch-icon" href="SkillSeva Logo.png">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        // Update top scrollbar on scroll
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
-            document.body.style.setProperty('--scroll-progress', scrollPercent + '%');
-        });
-
-        // Mobile newsletter toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleButton = document.querySelector('.mobile-newsletter-toggle');
-            const newsletterSection = document.getElementById('newsletter-section');
-            const socialButtons = document.querySelector('.top-social-buttons');
-            
-            if (toggleButton && newsletterSection) {
-                toggleButton.addEventListener('click', function() {
-                    newsletterSection.classList.toggle('newsletter-visible');
-                    toggleButton.classList.toggle('arrow-rotated');
-                    
-                    // Hide/show social media icons
-                    if (socialButtons) {
-                        socialButtons.classList.toggle('social-hidden');
-                    }
-                });
-            }
-        });
-    </script>
 </head>
 <body>
-    <!-- Top Social Media Buttons -->
-    <div class="top-social-buttons">
-        <a href="https://www.youtube.com/@SkillSeva" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
-            <span class="inline-block">
-                <svg class="social-icon social-icon-1" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                <svg class="social-icon social-icon-2" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-            </span>
-        </a>
-        <a href="https://www.linkedin.com/company/skillseva/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
-            <span class="inline-block">
-                <svg class="social-icon social-icon-1" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                <svg class="social-icon social-icon-2" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-            </span>
-        </a>
-        <a href="https://www.instagram.com/skillseva.in/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
-            <span class="inline-block">
-                <svg class="social-icon social-icon-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-                <svg class="social-icon social-icon-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-            </span>
-        </a>
-    </div>
-    
-    <main class="main-content w-full overflow-hidden">
-        <!-- Hero Section with Rotating Images -->
-        <section class="relative">
-            <a class="logo-link" href="/">
-                <div class="logo-container">
-                    <img src="SkillSeva Logo.png" alt="SkillSeva" class="logo-image">
-                </div>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="/">
+                <img class="brand__mark" src="SkillSeva Logo.png" alt="SkillSeva logo">
+                <span class="brand__type">SkillSeva</span>
             </a>
-
-            <div class="relative w-full h-full">
-                <!-- Rotating Circle Images -->
-                <div id="circle-child-0" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-1" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-2" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-3" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-4" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-5" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-6" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-7" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-8" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-9" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-10" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-                <div id="circle-child-11" class="circle-item">
-                    <div class="circle-image">
-                        <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=80&h=80&fit=crop&crop=face" alt="profile">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mobile Newsletter Toggle Arrow -->
-        <button class="mobile-newsletter-toggle" aria-label="Show newsletter">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 5v14"></path>
-                <path d="M19 12l-7-7-7 7"></path>
-            </svg>
-        </button>
-
-        <!-- Newsletter Section -->
-        <section class="newsletter-section" id="newsletter-section">
-            <div class="newsletter-text">
-                <span class="justify-center flex flex-wrap whitespace-pre-wrap">
-                    <span class="sr-only">Join our newsletter to be the first to know when iXM launches.</span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">J</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">o</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">i</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">n</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">o</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">u</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">r</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">n</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">e</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">w</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">s</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">l</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">e</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">t</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">t</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">e</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">r</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">t</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">o</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">b</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">e</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">t</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">h</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">e</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">f</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">i</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">r</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">s</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">t</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">t</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">o</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">k</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">n</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">o</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">w</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">w</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">h</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">e</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">n</span></span>
-                        <span> </span>
-                    </span>
-                        <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">i</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">X</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">M</span></span>
-                        <span> </span>
-                    </span>
-                    <span aria-hidden="true" class="inline-flex overflow-hidden">
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">l</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">a</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">u</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">n</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">c</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">h</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">e</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">s</span></span>
-                        <span class="whitespace-pre-wrap relative"><span class="inline-block">.</span></span>
-                    </span>
-                </span>
-            </div>
-
-            <form action="#" class="newsletter-form">
-                <div class="form-group">
-                    <input 
-                        class="email-input" 
-                        id="email" 
-                        placeholder="eg: alex@email.com" 
-                        required 
-                        type="email" 
-                        name="email"
-                    >
-                    <button 
-                        class="submit-btn" 
-                        type="submit" 
-                        aria-label="Submit notify email"
-                    >
-                        <span class="inline-block">
-                            <svg class="arrow-icon arrow-icon-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                            <svg class="arrow-icon arrow-icon-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                        </span>
-                    </button>
-                </div>
-            </form>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container mx-auto footer-content">
-                <p class="copyright">
-                    © 2025 by iXM — Developed by 
-                    <a class="footer-link" aria-label="insaneXmedia" href="http://insanexmedia.com/" target="_blank" rel="noopener noreferrer">insaneXmedia</a>
-                </p>
-            </div>
-        </footer>
-
-        <!-- Bottom Text -->
-        <div class="bottom-text">
-            <p class="leading-[1]">
-                <span class="bottom-text-content">
-                    <span class="bottom-word">skill</span>
-                    <br class="mobile-break">
-                    <span class="bottom-word">seva</span>
-                </span>
-            </p>
+            <nav class="site-nav" aria-label="Primary">
+            </nav>
         </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero__content">
+                <p class="hero__eyebrow">Cohort-based learning · India’s top operators</p>
+                <h1 class="hero__heading">
+                    Accelerate your career by learning from the <span class="hero__highlight">top 1%</span>
+                </h1>
+                <p class="hero__summary">
+                    Join a community where professionals at every stage experience rapid growth, guided by the expertise of the top minds in their fields. Our immersive, cohort-driven learning approach ensures lasting impact and measurable success.
+                </p>
+                <div class="hero__actions">
+                    <button class="btn btn--ghost" type="button">Talk to an advisor</button>
+                </div>
+                <dl class="hero__metrics">
+                    <div class="metric">
+                        <dt>4000+</dt>
+                        <dd>hours of live mentorship</dd>
+                    </div>
+                    <div class="metric">
+                        <dt>9.4/10</dt>
+                        <dd>average learner rating</dd>
+                    </div>
+                    <div class="metric">
+                        <dt>18</dt>
+                        <dd>industries represented</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="hero__marquee" aria-label="Featured mentors from SkillSeva">
+                <div class="marquee">
+                    <div class="marquee__track">
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68a75f8d0cb9979055a6b907_aashi%20agarwal.webp" alt="Portrait of Aashi Agarwal" loading="lazy">
+                            <div class="mentor-card__info">
+                                <h3>Aashi Agarwal</h3>
+                                <p>Chief of Staff · Adya Care</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb8028dfcf488b77bfbf7_Himanshu.png" alt="Portrait of Himanshu N Dubey" loading="lazy">
+                            <div class="mentor-card__info">
+                                <h3>Himanshu N Dubey</h3>
+                                <p>Associate Director · EY</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb7786c0f03d5f5bcdda2_Ravish.png" alt="Portrait of Ravish Kumar" loading="lazy">
+                            <div class="mentor-card__info">
+                                <h3>Ravish Kumar</h3>
+                                <p>VCs &amp; Startups Lead · Google</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb95215ab2541a2016845_Shitij.png" alt="Portrait of Shitij Jain" loading="lazy">
+                            <div class="mentor-card__info">
+                                <h3>Shitij Jain</h3>
+                                <p>Former Head of Media · Apple</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb807d967d5a05493ce6f_Himanshu%20brand.svg" alt="EY logo" loading="lazy" class="mentor-card__logo-only">
+                            <div class="mentor-card__info">
+                                <h3>Boardroom Labs</h3>
+                                <p>Design Your Path · Mini sprint</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68978ade9827aec266c55fca_adya%20care.svg" alt="Adya Care logo" loading="lazy" class="mentor-card__logo-only">
+                            <div class="mentor-card__info">
+                                <h3>Adya Care</h3>
+                                <p>Healthcare Leadership Residency</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68a422516ecc984e2b6fe982_google.svg" alt="Google logo" loading="lazy" class="mentor-card__logo-only">
+                            <div class="mentor-card__info">
+                                <h3>Google x SkillSeva</h3>
+                                <p>Strategic Growth Clinics</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb958a3af1d9fd77ba202_Shitij%20brand.svg" alt="Apple logo" loading="lazy" class="mentor-card__logo-only">
+                            <div class="mentor-card__info">
+                                <h3>Apple Alumni Circle</h3>
+                                <p>Leadership in Media Labs</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="marquee__track" aria-hidden="true">
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68a75f8d0cb9979055a6b907_aashi%20agarwal.webp" alt="" loading="lazy">
+                            <div class="mentor-card__info">
+                                <h3>Aashi Agarwal</h3>
+                                <p>Chief of Staff · Adya Care</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb8028dfcf488b77bfbf7_Himanshu.png" alt="" loading="lazy">
+                            <div class="mentor-card__info">
+                                <h3>Himanshu N Dubey</h3>
+                                <p>Associate Director · EY</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb7786c0f03d5f5bcdda2_Ravish.png" alt="" loading="lazy">
+                            <div class="mentor-card__info">
+                                <h3>Ravish Kumar</h3>
+                                <p>VCs &amp; Startups Lead · Google</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb95215ab2541a2016845_Shitij.png" alt="" loading="lazy">
+                            <div class="mentor-card__info">
+                                <h3>Shitij Jain</h3>
+                                <p>Former Head of Media · Apple</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb807d967d5a05493ce6f_Himanshu%20brand.svg" alt="" loading="lazy" class="mentor-card__logo-only">
+                            <div class="mentor-card__info">
+                                <h3>Boardroom Labs</h3>
+                                <p>Design Your Path · Mini sprint</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68978ade9827aec266c55fca_adya%20care.svg" alt="" loading="lazy" class="mentor-card__logo-only">
+                            <div class="mentor-card__info">
+                                <h3>Adya Care</h3>
+                                <p>Healthcare Leadership Residency</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68a422516ecc984e2b6fe982_google.svg" alt="" loading="lazy" class="mentor-card__logo-only">
+                            <div class="mentor-card__info">
+                                <h3>Google x SkillSeva</h3>
+                                <p>Strategic Growth Clinics</p>
+                            </div>
+                        </article>
+                        <article class="mentor-card">
+                            <img src="https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/686eb958a3af1d9fd77ba202_Shitij%20brand.svg" alt="" loading="lazy" class="mentor-card__logo-only">
+                            <div class="mentor-card__info">
+                                <h3>Apple Alumni Circle</h3>
+                                <p>Leadership in Media Labs</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
-
-
-
-
-
-
-
