@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function BlogSection() {
   const blogPosts = [
@@ -52,7 +51,7 @@ export default function BlogSection() {
             <div className="h_blog_grid">
               {blogPosts.map((post) => (
                 <article key={post.id} className="h_blog_card">
-                  <Link href={`/blog/${post.id}`} className="h_blog_card-link">
+                  <div className="h_blog_card-link" style={{ cursor: 'pointer' }}>
                     <div className="h_blog_card_image-wrapper">
                       <Image
                         src={post.image}
@@ -77,7 +76,7 @@ export default function BlogSection() {
                         <span className="h_blog_card_arrow">→</span>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 </article>
               ))}
             </div>

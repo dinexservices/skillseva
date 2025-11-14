@@ -12,21 +12,21 @@ export default function Programs() {
       title: 'Consultancy Program',
       description: 'Gain expert guidance to solve real-world business challenges',
       image: 'https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68a6b05d8c34c7b23f05d467_Himanshu%20Dubey.webp',
-      link: '/our-cohort/metvy-consultancy-program',
+      link: '/our-cohort/skillseva-consultancy-program',
       alt: 'Consultancy Program'
     },
     {
       title: 'Entrepreneurship Program',
       description: 'Build, launch, and grow your own innovative ventures',
       image: 'https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68a6b0747f375c3f3c51ac5c_Sanskar%20Sinha.webp',
-      link: '/our-cohort/metvy-entrepreneurship-program',
+      link: '/our-cohort/skillseva-entrepreneurship-program',
       alt: 'Entrepreneurship Program'
     },
     {
       title: 'Data Analytics Program',
       description: 'Master data tools to drive smarter decisions',
       image: 'https://cdn.prod.website-files.com/63b53c964a870814042dfc9f/68a6b738b7f5b9bcb24c1839_Ankit.webp',
-      link: '/our-cohort/metvy-data-analytics-program',
+      link: '/our-cohort/skillseva-data-analytics-program',
       alt: 'Data Analytics Program'
     },
     {
@@ -34,7 +34,7 @@ export default function Programs() {
       description: 'Build strong financial foundations for lasting business success',
       image: 'https://cdn.prod.website-files.com/63b304c11504f900a6192a63/68d16008ed4628b79eef66b1_mfap.webp',
       link: '/financial-analyst-program',
-      alt: 'Metvy Financial Analyst Fellowship'
+      alt: 'SkillSeva Financial Analyst Fellowship'
     }
   ]
 

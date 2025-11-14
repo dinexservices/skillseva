@@ -28,9 +28,9 @@ export default function Footer() {
                     <span className="footer_medium-weight-span">Phone:</span> +91-9821964864
                   </div>
                 </a>
-                <a href="mailto:rajanluthra@metvy.com" className="footer_link-text">
+                <a href="mailto:contact@skillseva.com" className="footer_link-text">
                   <div>
-                    <span className="footer_medium-weight-span">Email:</span> rajanluthra@metvy.com
+                    <span className="footer_medium-weight-span">Email:</span> contact@skillseva.com
                   </div>
                 </a>
               </div>
@@ -74,7 +74,7 @@ export default function Footer() {
             <div className="footer-end-bar">
               <div className="footer_copyright-wrapper">
                 <div className="footer_copyright-text">
-                  <p>Copyright © METVY NET PRIVATE LIMITED. All rights reserved</p>
+                  <p>Copyright © SKILL SEVA. All rights reserved</p>
                 </div>
                 <div className="footer-watermark">SKILL SEVA</div>
               </div>
