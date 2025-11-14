@@ -1998,9 +1998,8 @@ main {
 }
 
 .footer_logo {
-    width: auto;
-    height: 40px;
-    object-fit: contain;
+    width: 200px;
+    height: 100px;
 }
 
 .footer-iimb_logo {

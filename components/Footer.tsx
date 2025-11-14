@@ -11,22 +11,14 @@ export default function Footer() {
               <div className="footer-brand">
                 <Link href="/" className="footer-brand_link">
                   <Image
-                    src="https://cdn.prod.website-files.com/63b304c11504f900a6192a63/68a4b535641012cd4f816745_metvy.svg"
-                    alt="Metvy logo black"
-                    width={120}
-                    height={40}
+                    src="/Untitled_design__7_-removebg-preview.png"
+                    alt="SkillSeva logo"
+                    width={240}
+                    height={150}
                     className="footer_logo"
                     unoptimized
                   />
                 </Link>
-                <Image
-                  src="https://cdn.prod.website-files.com/63b304c11504f900a6192a63/680e0f74aa7a781ca20bf5ce_IIMB-NSRCEL.svg"
-                  alt="IIMB NSRCEL Logo"
-                  width={150}
-                  height={50}
-                  className="footer-iimb_logo"
-                  unoptimized
-                />
               </div>
 
               <div className="footer_links-wrap">
