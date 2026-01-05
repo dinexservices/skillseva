@@ -13,7 +13,7 @@ export default function CTA() {
   return (
     <section className="section section--cta" id="apply">
       <div className="cta-card">
-        <h2>Ready to design your next leap?</h2>
+        <h2>Ready to design your <span className="brand-purple-highlight italic-emphasis">next leap</span>?</h2>
         <p>Tell us where you are headed. We'll pair you with the program, mentor, and learning squad that fits your ambition.</p>
         <form className="cta-form" onSubmit={handleSubmit}>
           <label className="sr-only" htmlFor="cta-email">Email address</label>
@@ -25,5 +25,7 @@ export default function CTA() {
     </section>
   )
 }
+
+
 
 

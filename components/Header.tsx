@@ -22,19 +22,21 @@ export default function Header() {
     <header className={`site-header ${isScrolled ? 'site-header--scrolled' : ''}`}>
       <div className="site-header__inner">
         <Link className="brand" href="/">
-          <Image 
-            className="brand__mark" 
-            src="/Untitled_design__7_-removebg-preview.png" 
+          <Image
+            className="brand__mark"
+            src="/SkillSeva Logo_3 (1).png"
             alt="SkillSeva logo"
-            width={50}
-            height={50}
+            width={400}
+            height={120}
+            style={{ objectFit: 'contain' }}
             unoptimized
           />
         </Link>
         <nav className="site-nav" aria-label="Primary">
-          <Link className="site-nav__link" href="#programs">Programs</Link>
-          <Link className="site-nav__link" href="#community">Community</Link>
-          <Link className="site-nav__link" href="#impact">Impact</Link>
+          <Link className="site-nav__link" href="/#programs">Programs</Link>
+          <Link className="site-nav__link" href="/events">Events</Link>
+          <Link className="site-nav__link" href="/jobs">Job Board</Link>
+          <Link className="site-nav__link" href="/#community">Community</Link>
         </nav>
         <Link className="site-header__cta" href="#apply">Join the waitlist</Link>
       </div>

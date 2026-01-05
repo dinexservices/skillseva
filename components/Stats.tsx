@@ -59,9 +59,9 @@ export default function Stats() {
         <div className="stats-content">
           <div className="stats-text">
             <h2 className="stats-heading">
-              <span className="brand-green-color-span">SkillSeva</span> is for{' '}
-              <span className="brand-green-color-span">anyone and everyone</span>, a lasting first impression with{' '}
-              <span className="brand-green-color-span">cohort based learning</span>
+              <span className="brand-purple-highlight">SkillSeva</span> is for{' '}
+              <span className="brand-purple-highlight">anyone and everyone</span>, a lasting first impression with{' '}
+              <span className="brand-purple-highlight italic-emphasis">cohort based learning</span>
             </h2>
             <p className="stats-subheading">We are helping people thrive</p>
           </div>

@@ -3,7 +3,7 @@ export default function Community() {
     <section className="section section--community" id="community">
       <div className="community__intro">
         <p className="section__eyebrow">Community</p>
-        <h2>Learn inside a high-trust operator network</h2>
+        <h2>Learn inside a <span className="brand-purple-highlight italic-emphasis">high-trust operator network</span></h2>
         <p>From curated masterminds to alumni circles across Bengaluru, Mumbai, and Delhi, SkillSeva is where career-long relationships begin.</p>
       </div>
       <div className="community__grid">
@@ -23,5 +23,7 @@ export default function Community() {
     </section>
   )
 }
+
+
 
 

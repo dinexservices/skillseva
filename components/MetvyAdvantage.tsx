@@ -38,7 +38,7 @@ export default function BlogSection() {
 
   return (
     <section className="section h_blog-section">
-      <div className="v3_padding-global padding-top">
+      <div className="v3_padding-global">
         <div className="v3_container">
           <div className="h_blog-wrapper">
             <div className="h_blog_text-wrapper">
@@ -47,7 +47,7 @@ export default function BlogSection() {
                 Stay ahead with expert insights, career tips, and industry trends from our community of top operators and mentors
               </p>
             </div>
-            
+
             <div className="h_blog_grid">
               {blogPosts.map((post) => (
                 <article key={post.id} className="h_blog_card">

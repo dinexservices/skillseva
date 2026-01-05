@@ -41,7 +41,7 @@ export default function Testimonials() {
         <div className="v3_container">
           <div className="h_testimonial-wrapper">
             <div className="h_testimonial_text-wrapper">
-              <h2 className="v3_heading_h2">Our Student testimonial</h2>
+              <h2 className="v3_heading_h2">Our <span className="brand-purple-highlight italic-emphasis">Student testimonial</span></h2>
               <p className="v3_paragraph_medium">Hear from learners who transformed their careers through our immersive cohorts</p>
             </div>
             <div className="h_testimonial_grid">

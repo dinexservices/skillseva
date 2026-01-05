@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Programs() {
-  const [activeTab, setActiveTab] = useState('Cohorts')
+  const [activeTab, setActiveTab] = useState('On-going')
 
   const cohorts = [
     {
@@ -80,7 +80,7 @@ export default function Programs() {
           <div className="h_program-wrapper">
             <div className="h_program_text-wrapper">
               <h2 className="v3_heading_h2" aria-label="Your Industry, Your Path">
-                Your Industry, Your Path
+                Your Industry, <span className="brand-purple-highlight italic-emphasis">Your Path</span>
               </h2>
               <div className="h_program_paragraph-wrapper">
                 <p className="v3_paragraph_medium">
@@ -88,30 +88,30 @@ export default function Programs() {
                 </p>
               </div>
             </div>
-            
+
             <div className="h_program_tab-wrapper">
               <div className="h_program_tabs">
                 <div className="h_program_tabs_menu" role="tablist">
                   <button
-                    className={`h_program_tabs_link ${activeTab === 'Cohorts' ? 'w--current' : ''}`}
-                    onClick={() => setActiveTab('Cohorts')}
+                    className={`h_program_tabs_link ${activeTab === 'On-going' ? 'w--current' : ''}`}
+                    onClick={() => setActiveTab('On-going')}
                     role="tab"
-                    aria-selected={activeTab === 'Cohorts'}
+                    aria-selected={activeTab === 'On-going'}
                   >
-                    <div>Cohorts</div>
+                    <div>On going cohort</div>
                   </button>
                   <button
-                    className={`h_program_tabs_link ${activeTab === 'Fellowship' ? 'w--current' : ''}`}
-                    onClick={() => setActiveTab('Fellowship')}
+                    className={`h_program_tabs_link ${activeTab === 'Upcoming' ? 'w--current' : ''}`}
+                    onClick={() => setActiveTab('Upcoming')}
                     role="tab"
-                    aria-selected={activeTab === 'Fellowship'}
+                    aria-selected={activeTab === 'Upcoming'}
                   >
-                    <div>Fellowship</div>
+                    <div>Upcoming cohort</div>
                   </button>
                 </div>
-                
+
                 <div className="h_program_tabs_content">
-                  {activeTab === 'Cohorts' && (
+                  {activeTab === 'On-going' && (
                     <div className="h_program_list">
                       {cohorts.map((program, index) => (
                         <div key={index} className="h_program_item">
@@ -142,8 +142,8 @@ export default function Programs() {
                       ))}
                     </div>
                   )}
-                  
-                  {activeTab === 'Fellowship' && (
+
+                  {activeTab === 'Upcoming' && (
                     <div className="h_program_list">
                       {fellowships.map((program, index) => (
                         <div key={index} className="h_program_item">
@@ -182,31 +182,7 @@ export default function Programs() {
                 </div>
               </div>
             </div>
-            
-            <div className="h_quiz-wrapper">
-              <div className="h_quiz_text-wrapper">
-                <h2 className="v3_heading_h2 center-align">Not sure what you are interested in ?</h2>
-                <p className="v3_paragraph_medium center-align">
-                  Discover the perfect program for your goals. Whether you're exploring new skills or refining existing ones, we'll help you choose a path that aligns with your ambitions and sets you up for success
-                </p>
-              </div>
-              <Link
-                href="https://form.typeform.com/to/LeUdy7sm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="v3_btn main w-button"
-              >
-                Take a quiz
-              </Link>
-              <Image
-                src="https://cdn.prod.website-files.com/63b304c11504f900a6192a63/6895ca1cde02cdd46bb7b433_lines.svg"
-                alt=""
-                width={200}
-                height={200}
-                className="h_quiz_bg-image"
-                unoptimized
-              />
-            </div>
+
           </div>
         </div>
       </div>

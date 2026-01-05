@@ -11,11 +11,12 @@ export default function Footer() {
               <div className="footer-brand">
                 <Link href="/" className="footer-brand_link">
                   <Image
-                    src="/Untitled_design__7_-removebg-preview.png"
+                    src="/SkillSeva Logo_3 (1).png"
                     alt="SkillSeva logo"
-                    width={240}
+                    width={500}
                     height={150}
                     className="footer_logo"
+                    style={{ objectFit: 'contain' }}
                     unoptimized
                   />
                 </Link>
@@ -76,7 +77,6 @@ export default function Footer() {
                 <div className="footer_copyright-text">
                   <p>Copyright © SKILL SEVA. All rights reserved</p>
                 </div>
-                <div className="footer-watermark">SKILL SEVA</div>
               </div>
               <div className="socials-bar">
                 <a
