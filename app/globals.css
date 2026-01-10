@@ -33,7 +33,6 @@ body {
     padding: 0;
     background: radial-gradient(140% 140% at 10% 0%, rgba(89, 39, 157, 0.04) 0%, transparent 48%), var(--bg-primary);
     color: var(--text-primary);
-    font-family: "Neue Montreal Regular", "Neue Montreal Regular Placeholder", sans-serif;
     min-height: 100%;
 }
 
@@ -153,7 +152,7 @@ main {
 }
 
 .hero {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 1rem 4rem;
     display: flex;
@@ -190,12 +189,13 @@ main {
 }
 
 .hero__heading {
-    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif;
-    font-size: clamp(2rem, 4.2vw + 1rem, 4.2rem);
-    line-height: 1.05;
+    font-size: clamp(2rem, 3.8vw + 1rem, 3.6rem);
+    line-height: 1.1;
     font-weight: 500;
     letter-spacing: -0.02em;
     margin: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero__highlight {
@@ -207,6 +207,9 @@ main {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text-secondary);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero__actions {
@@ -281,7 +284,6 @@ main {
 }
 
 .metric dt {
-    font-family: "Instrument Serif", serif;
     font-size: 2.25rem;
     font-weight: 500;
     line-height: 1;
@@ -719,12 +721,12 @@ main {
 .stats-text {
     display: grid;
     gap: 1rem;
-    max-width: 800px;
-    text-align: left;
+    max-width: 1190px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .stats-heading {
-    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif;
     font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
     line-height: 1.1;
     font-weight: 400;
@@ -737,6 +739,7 @@ main {
 }
 
 .italic-emphasis {
+    font-family: "Instrument Serif", serif;
     font-style: italic;
 }
 
@@ -830,8 +833,10 @@ main {
 .brands-text {
     display: grid;
     gap: 1rem;
-    max-width: 700px;
-    text-align: left;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 .brands-marquee {
@@ -842,12 +847,13 @@ main {
 }
 
 .brands-heading {
-    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif;
-    font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+    font-size: clamp(2rem, 3.5vw + 1rem, 3.5rem);
     line-height: 1.1;
     font-weight: 400;
     margin: 0;
     color: var(--text-primary);
+    max-width: 819px;
+    width: 100%;
 }
 
 .brands-highlight {
@@ -856,9 +862,11 @@ main {
 
 .brands-description {
     font-size: 1.1rem;
+    line-height: 1.6;
     color: var(--text-secondary);
     margin: 0;
-    line-height: 1.6;
+    max-width: 942px;
+    width: 100%;
 }
 
 .brands-marquee-wrapper {
@@ -1039,20 +1047,26 @@ main {
 .h_program_text-wrapper {
     display: grid;
     gap: 1.5rem;
-    max-width: 800px;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 .v3_heading_h2 {
-    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif;
-    font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+    font-size: clamp(2rem, 3.5vw + 1rem, 3.5rem);
     line-height: 1.1;
     font-weight: 400;
     margin: 0;
     color: var(--text-primary);
+    max-width: 1200px;
+    width: 100%;
 }
 
 .h_program_paragraph-wrapper {
     margin-top: 0.5rem;
+    max-width: 748px;
+    width: 100%;
 }
 
 .v3_paragraph_medium {
@@ -1550,6 +1564,10 @@ main {
     overflow: hidden;
 }
 
+.h_quiz-wrapper .v3_heading_h2 {
+    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif;
+}
+
 .h_quiz_text-wrapper {
     display: grid;
     gap: 1rem;
@@ -1653,8 +1671,10 @@ main {
 .h_testimonial_text-wrapper {
     display: grid;
     gap: 1rem;
-    max-width: 800px;
-    text-align: left;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 .h_testimonial_grid {
@@ -1798,8 +1818,10 @@ main {
 .h_blog_text-wrapper {
     display: grid;
     gap: 1rem;
-    max-width: 800px;
-    text-align: left;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 .h_blog_grid {

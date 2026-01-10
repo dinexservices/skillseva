@@ -32,24 +32,24 @@ export default function Stats() {
 
   const facts = [
     {
-      number: '750',
+      number: '500',
       suffix: '+',
-      label: 'Mentors'
+      label: 'Active Members'
     },
     {
-      number: '3',
-      suffix: 'k+',
-      label: 'Sessions delivered'
+      number: '1000',
+      suffix: '+',
+      label: 'Live Sessions'
     },
     {
       number: '150',
       suffix: '%',
-      label: 'Avg. skill rating growth'
+      label: 'Avg. skill rating gain'
     },
     {
-      number: '20',
-      suffix: 'k+',
-      label: 'Community'
+      number: '10',
+      suffix: '+',
+      label: 'Active Mentors'
     }
   ]
 
@@ -59,11 +59,11 @@ export default function Stats() {
         <div className="stats-content">
           <div className="stats-text">
             <h2 className="stats-heading">
-              <span className="brand-purple-highlight">SkillSeva</span> is for{' '}
-              <span className="brand-purple-highlight">anyone and everyone</span>, a lasting first impression with{' '}
-              <span className="brand-purple-highlight italic-emphasis">cohort based learning</span>
+              <span className="brand-purple-highlight italic-emphasis">SkillSeva</span> is for{' '}
+              <span className="brand-purple-highlight italic-emphasis">anyone and everyone</span>, who wants{' '}
+              <span className="brand-purple-highlight italic-emphasis">real skills not just certificates.</span>
             </h2>
-            <p className="stats-subheading">We are helping people thrive</p>
+            <p className="stats-subheading">Our community at a glance</p>
           </div>
           <div className="facts-bar">
             {facts.map((fact, index) => (

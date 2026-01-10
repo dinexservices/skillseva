@@ -1,6 +1,13 @@
 import type { Metadata } from 'next'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import SmoothScroll from '@/components/SmoothScroll'
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-plus-jakarta',
+})
 
 export const metadata: Metadata = {
   title: 'SkillSeva | Accelerate Your Career',
@@ -18,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, padding: 0 }}>
+      <body className={plusJakartaSans.className} style={{ margin: 0, padding: 0 }}>
         <SmoothScroll>
           {children}
         </SmoothScroll>

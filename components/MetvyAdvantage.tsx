@@ -42,9 +42,9 @@ export default function BlogSection() {
         <div className="v3_container">
           <div className="h_blog-wrapper">
             <div className="h_blog_text-wrapper">
-              <h2 className="v3_heading_h2">Latest Insights & Articles</h2>
+              <h2 className="v3_heading_h2" style={{ fontFamily: '"Instrument Serif", serif' }}>Latest Insights & Articles</h2>
               <p className="v3_paragraph_medium">
-                Stay ahead with expert insights, career tips, and industry trends from our community of top operators and mentors
+                Stay updated with expert insights, resources, and industry trends from our community of top operators and mentors
               </p>
             </div>
 

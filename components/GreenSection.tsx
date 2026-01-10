@@ -30,10 +30,10 @@ export default function GreenSection() {
         <div className="brands-content">
           <div className="brands-text" id="mentors-text-section">
             <h2 className="brands-heading" id="mentors-heading">
-              Mentors from more than <span className="brands-highlight italic-emphasis">200+ brands</span>
+              Learn from experts working across <span className="brands-highlight italic-emphasis">50+ brands</span>
             </h2>
             <p className="brands-description">
-              Learn from leaders shaping industries, bringing you insider insights and proven strategies to accelerate your journey
+              Our mentors come from top startups, enterprises, and fast-growing companies, bringing real-world experience, not text book theory
             </p>
           </div>
           <div className="brands-marquee">

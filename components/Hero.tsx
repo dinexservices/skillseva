@@ -14,29 +14,29 @@ export default function Hero() {
   return (
     <section className={`hero ${isVisible ? 'hero--visible' : ''}`} id="home">
       <div className="hero__content">
-        <p className="hero__eyebrow">Cohort-based learning · India's top operators</p>
+        <p className="hero__eyebrow">BUILD SKILLS THAT PAY</p>
         <h1 className="hero__heading">
-          Accelerate your career by learning from the <span className="hero__highlight">top 1%</span>
+          Learn directly from industry professionals <br /> and turn your <span className="hero__highlight italic-emphasis">skills into real income.</span>
         </h1>
         <p className="hero__summary">
-          Join a community where professionals at every stage experience rapid growth, guided by the expertise of the top minds in their fields. Our immersive, cohort-driven learning approach ensures lasting impact and measurable success.
+          SkillSeva is a cohort-based learning platform designed to help students <br /> and early professionals learn practical, job-ready skills through real <br /> projects, mentorship, and community.
         </p>
         <div className="hero__actions">
           <Link className="btn btn--primary" href="#programs">Explore our programs</Link>
-          <button className="btn btn--ghost" type="button">Talk to an advisor</button>
+          <button className="btn btn--ghost" type="button">Book a Call</button>
         </div>
         <dl className="hero__metrics">
           <div className="metric">
-            <dt>4000+</dt>
-            <dd>hours of live mentorship</dd>
+            <dt>1000+</dt>
+            <dd>Learners Trained</dd>
           </div>
           <div className="metric">
-            <dt>9.4/10</dt>
-            <dd>average learner rating</dd>
+            <dt>5000+</dt>
+            <dd>Hours of Live Learning</dd>
           </div>
           <div className="metric">
-            <dt>18</dt>
-            <dd>industries represented</dd>
+            <dt>7</dt>
+            <dd>Active Cohorts Running</dd>
           </div>
         </dl>
       </div>
