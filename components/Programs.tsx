@@ -68,7 +68,7 @@ export default function Programs() {
                     role="tab"
                     aria-selected={activeTab === 'On-going'}
                   >
-                    <div>On going cohort</div>
+                    <div>Ongoing cohort</div>
                   </button>
                   <button
                     className={`h_program_tabs_link ${activeTab === 'Upcoming' ? 'w--current' : ''}`}
