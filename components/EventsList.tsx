@@ -26,6 +26,15 @@ const events: Event[] = [
         link: 'https://forms.gle/nKVoZbJp5pzpRqwo8',
         embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdGoAQs6ihLfBtfwc8RQOJDuB8ejQFbD4QmKyGbsJEFAiE_0w/viewform?embedded=true',
         description: "We're planning an offline meetup in Delhi NCR, along with interactive sessions, community networking, and an experience full of surprises. Limited slots available - fill the form to stay updated and get priority access!"
+    },
+    {
+        category: 'MEETUP',
+        title: 'SkillSeva Offline Meetup: Gurgaon',
+        date: 'February 2026',
+        location: 'Gurgaon',
+        image: '/events/meetup-2.png',
+        type: 'In-person',
+        description: "Join us for an exclusive offline meetup in Gurgaon. Network with top operators, share insights, and build meaningful connections in the heart of the corporate hub."
     }
 ]
 
@@ -150,144 +159,161 @@ export default function EventsList() {
                 </div>
             )}
 
-            <section className="section section--events">
-                <div className="section__heading">
-                    <span className="section__eyebrow">Upcoming Events</span>
-                    <h2 style={{
-                        fontWeight: 500,
-                        fontSize: 'clamp(2.5rem, 4vw + 1rem, 4rem)',
-                        lineHeight: 1.1,
-                        letterSpacing: '-0.01em',
-                        margin: 0
-                    }}>
-                        Meetups, Classes & <span className="brand-purple-highlight italic-emphasis">Workshops</span>
-                    </h2>
-                    <p>Join our exclusive community events designed for high-trust networking and skill growth.</p>
-                </div>
+            <section className="section section--events" style={{ justifyItems: 'center' }}>
+                <div className="v3_padding-global">
+                    <div className="v3_container">
+                        <div className="section__heading" style={{ textAlign: 'center', margin: '0 auto' }}>
+                            <span className="section__eyebrow" style={{ display: 'block', textAlign: 'center' }}>Upcoming Events</span>
+                            <h2 style={{
+                                fontWeight: 500,
+                                fontSize: 'clamp(2.5rem, 4vw + 1rem, 4rem)',
+                                lineHeight: 1.1,
+                                letterSpacing: '-0.01em',
+                                margin: 0,
+                                textAlign: 'center'
+                            }}>
+                                Meetups, Classes & <span className="brand-purple-highlight italic-emphasis">Workshops</span>
+                            </h2>
+                            <p style={{ maxWidth: '600px', margin: '1rem auto 0', color: 'var(--text-secondary)', textAlign: 'center' }}>Join our exclusive community events designed for high-trust networking and skill growth.</p>
+                        </div>
 
-                <div className="h_blog_list" style={{
-                    marginTop: '3.5rem',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(2, 1fr)',
-                    gap: '2.5rem'
-                }}>
-                    {events.map((event, index) => (
-                        <div key={index} className="h_blog_card" style={{ maxWidth: '500px', margin: '0 auto' }}>
-                            <div className="h_blog_card_image-wrapper" style={{ height: '220px' }}>
-                                <Image
-                                    src={event.image}
-                                    alt={event.title}
-                                    fill
-                                    className="h_blog_card_image"
-                                    style={{ objectFit: 'cover' }}
-                                />
-                            </div>
-                            <div className="h_blog_card_content" style={{ padding: '1.5rem' }}>
-                                <span className="h_blog_card_category" style={{ fontSize: '0.75rem', padding: '0.3rem 0.8rem' }}>{event.category}</span>
-                                <h3 className="h_blog_card_title" style={{ fontSize: '1.4rem', marginTop: '0.6rem' }}>{event.title}</h3>
-                                <div style={{ marginTop: '1rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
-                                        <span style={{ fontSize: '1rem' }}>📅</span> {event.date}
+                        <div className="h_blog_list" style={{
+                            marginTop: '3.5rem',
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center',
+                            gap: '2.5rem'
+                        }}>
+                            {events.map((event, index) => (
+                                <div key={index} className="h_blog_card" style={{ maxWidth: '500px', margin: '0 auto' }}>
+                                    <div className="h_blog_card_image-wrapper" style={{ height: '220px' }}>
+                                        <Image
+                                            src={event.image}
+                                            alt={event.title}
+                                            fill
+                                            className="h_blog_card_image"
+                                            style={{ objectFit: 'cover' }}
+                                        />
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                        <span style={{ fontSize: '1rem' }}>📍</span> {event.location}
+                                    <div className="h_blog_card_content" style={{ padding: '1.5rem' }}>
+                                        <span className="h_blog_card_category" style={{ fontSize: '0.75rem', padding: '0.3rem 0.8rem' }}>{event.category}</span>
+                                        <h3 className="h_blog_card_title" style={{ fontSize: '1.4rem', marginTop: '0.6rem' }}>{event.title}</h3>
+                                        <div style={{ marginTop: '1rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                                                <span style={{ fontSize: '1rem' }}>📅</span> {event.date}
+                                            </div>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                <span style={{ fontSize: '1rem' }}>📍</span> {event.location}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="h_blog_card_footer" style={{ borderTop: '1px solid rgba(0,0,0,0.06)', padding: '1.25rem 1.5rem' }}>
+                                        {event.embedUrl ? (
+                                            <a
+                                                href={`/events/register?title=${encodeURIComponent(event.title)}&date=${encodeURIComponent(event.date)}&location=${encodeURIComponent(event.location)}&description=${encodeURIComponent(event.description || '')}&embedUrl=${encodeURIComponent(event.embedUrl)}&category=${encodeURIComponent(event.category)}`}
+                                                className="site-header__cta"
+                                                style={{
+                                                    width: '100%',
+                                                    textAlign: 'center',
+                                                    fontSize: '0.9rem',
+                                                    padding: '0.75rem',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    gap: '0.5rem',
+                                                    textDecoration: 'none'
+                                                }}
+                                            >
+                                                <span style={{ fontSize: '1.2rem' }}>ℹ️</span>
+                                                View Details & Register
+                                            </a>
+                                        ) : event.link ? (
+                                            <a
+                                                href={event.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="site-header__cta"
+                                                style={{
+                                                    width: '100%',
+                                                    textAlign: 'center',
+                                                    fontSize: '0.9rem',
+                                                    padding: '0.75rem',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    gap: '0.5rem',
+                                                    textDecoration: 'none'
+                                                }}
+                                            >
+                                                Register Now
+                                            </a>
+                                        ) : (
+                                            <button
+                                                className="site-header__cta"
+                                                disabled
+                                                style={{
+                                                    width: '100%',
+                                                    textAlign: 'center',
+                                                    fontSize: '0.9rem',
+                                                    padding: '0.75rem',
+                                                    opacity: 0.6,
+                                                    cursor: 'not-allowed',
+                                                    background: '#ccc',
+                                                    borderColor: '#ccc',
+                                                    color: '#666'
+                                                }}
+                                            >
+                                                Form Coming Soon
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
+                            ))}
+                        </div>
+
+                        <div className="section__heading" style={{ marginTop: '8rem', textAlign: 'center', margin: '8rem auto 0' }}>
+                            <span className="section__eyebrow" style={{ display: 'block', textAlign: 'center' }}>Moments</span>
+                            <h2 style={{
+                                fontWeight: 500,
+                                fontSize: 'clamp(2.5rem, 4vw + 1rem, 4rem)',
+                                lineHeight: 1.1,
+                                letterSpacing: '-0.01em',
+                                margin: 0,
+                                textAlign: 'center'
+                            }}>
+                                Life at <span className="brand-purple-highlight italic-emphasis">SkillSeva</span>
+                            </h2>
+                            <p style={{ maxWidth: '600px', margin: '1rem auto 0', color: 'var(--text-secondary)', textAlign: 'center' }}>Glimpses into our vibrant community of operators, mentors, and learners.</p>
+                        </div>
+
+                        <div className="gallery-grid" style={{
+                            marginTop: '3.5rem',
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            gap: '1.5rem'
+                        }}>
+                            <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
+                                <Image src="/events/meetup-1.png" alt="Gallery 1" fill style={{ objectFit: 'cover' }} />
                             </div>
-                            <div className="h_blog_card_footer" style={{ borderTop: '1px solid rgba(0,0,0,0.06)', padding: '1.25rem 1.5rem' }}>
-                                {event.embedUrl ? (
-                                    <a
-                                        href={`/events/register?title=${encodeURIComponent(event.title)}&date=${encodeURIComponent(event.date)}&location=${encodeURIComponent(event.location)}&description=${encodeURIComponent(event.description || '')}&embedUrl=${encodeURIComponent(event.embedUrl)}&category=${encodeURIComponent(event.category)}`}
-                                        className="site-header__cta"
-                                        style={{
-                                            width: '100%',
-                                            textAlign: 'center',
-                                            fontSize: '0.9rem',
-                                            padding: '0.75rem',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '0.5rem',
-                                            textDecoration: 'none'
-                                        }}
-                                    >
-                                        <span style={{ fontSize: '1.2rem' }}>ℹ️</span>
-                                        View Details & Register
-                                    </a>
-                                ) : event.link ? (
-                                    <a
-                                        href={event.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="site-header__cta"
-                                        style={{
-                                            width: '100%',
-                                            textAlign: 'center',
-                                            fontSize: '0.9rem',
-                                            padding: '0.75rem',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '0.5rem',
-                                            textDecoration: 'none'
-                                        }}
-                                    >
-                                        Register Now
-                                    </a>
-                                ) : (
-                                    <button
-                                        className="site-header__cta"
-                                        style={{ width: '100%', textAlign: 'center', fontSize: '0.9rem', padding: '0.75rem' }}
-                                    >
-                                        Register Now
-                                    </button>
-                                )}
+                            <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
+                                <Image src="/events/meetup-2.png" alt="Gallery 2" fill style={{ objectFit: 'cover' }} />
+                            </div>
+                            <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
+                                <Image src="/events/online-1.png" alt="Gallery 3" fill style={{ objectFit: 'cover' }} />
+                            </div>
+                            <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
+                                <Image src="/events/online-2.png" alt="Gallery 4" fill style={{ objectFit: 'cover' }} />
+                            </div>
+                            <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
+                                <Image src="/events/meetup-1.png" alt="Gallery 5" fill style={{ objectFit: 'cover' }} />
+                            </div>
+                            <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
+                                <Image src="/events/meetup-2.png" alt="Gallery 6" fill style={{ objectFit: 'cover' }} />
                             </div>
                         </div>
-                    ))}
-                </div>
-
-                <div className="section__heading" style={{ marginTop: '8rem' }}>
-                    <span className="section__eyebrow">Moments</span>
-                    <h2 style={{
-                        fontWeight: 500,
-                        fontSize: 'clamp(2.5rem, 4vw + 1rem, 4rem)',
-                        lineHeight: 1.1,
-                        letterSpacing: '-0.01em',
-                        margin: 0
-                    }}>
-                        Life at <span className="brand-purple-highlight italic-emphasis">SkillSeva</span>
-                    </h2>
-                    <p>Glimpses into our vibrant community of operators, mentors, and learners.</p>
-                </div>
-
-                <div className="gallery-grid" style={{
-                    marginTop: '3.5rem',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
-                    gap: '1.5rem'
-                }}>
-                    <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
-                        <Image src="/events/meetup-1.png" alt="Gallery 1" fill style={{ objectFit: 'cover' }} />
-                    </div>
-                    <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
-                        <Image src="/events/meetup-2.png" alt="Gallery 2" fill style={{ objectFit: 'cover' }} />
-                    </div>
-                    <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
-                        <Image src="/events/online-1.png" alt="Gallery 3" fill style={{ objectFit: 'cover' }} />
-                    </div>
-                    <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
-                        <Image src="/events/online-2.png" alt="Gallery 4" fill style={{ objectFit: 'cover' }} />
-                    </div>
-                    <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
-                        <Image src="/events/meetup-1.png" alt="Gallery 5" fill style={{ objectFit: 'cover' }} />
-                    </div>
-                    <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
-                        <Image src="/events/meetup-2.png" alt="Gallery 6" fill style={{ objectFit: 'cover' }} />
                     </div>
                 </div>
             </section>
         </>
     )
 }
-
