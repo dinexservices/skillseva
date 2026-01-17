@@ -3,10 +3,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import WhatsAppModal from './WhatsAppModal'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,47 +22,50 @@ export default function Header() {
   }, [])
 
   return (
-    <header className={`site-header ${isScrolled ? 'site-header--scrolled' : ''}`}>
-      <div className="site-header__inner">
-        <Link className="brand" href="/">
-          <Image
-            className="brand__mark"
-            src="/SkillSeva Logo_3 (1).png"
-            alt="SkillSeva logo"
-            width={400}
-            height={120}
-            style={{ objectFit: 'contain' }}
-            unoptimized
-          />
-        </Link>
-        <nav className="site-nav" aria-label="Primary">
-          <Link className="site-nav__link" href="/#programs">Programs</Link>
-          <Link className="site-nav__link" href="/events">Events</Link>
-          <Link className="site-nav__link" href="/jobs">Job Board</Link>
-          <Link className="site-nav__link" href="/#community">Community</Link>
-        </nav>
-        <Link className="site-header__cta desktop-only" href="#apply">Join the waitlist</Link>
+    <>
+      <header className={`site-header ${isScrolled ? 'site-header--scrolled' : ''}`}>
+        <div className="site-header__inner">
+          <Link className="brand" href="/">
+            <Image
+              className="brand__mark"
+              src="/SkillSeva Logo_3 (1).png"
+              alt="SkillSeva logo"
+              width={400}
+              height={120}
+              style={{ objectFit: 'contain' }}
+              unoptimized
+            />
+          </Link>
+          <nav className="site-nav" aria-label="Primary">
+            <Link className="site-nav__link" href="/#programs">Programs</Link>
+            <Link className="site-nav__link" href="/events">Events</Link>
+            <Link className="site-nav__link" href="/jobs">Job Board</Link>
 
-        <button
-          className="mobile-menu-toggle"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
-        </button>
-
-        <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
-          <nav className="mobile-nav__links">
-            <Link className="mobile-nav__link" href="/#programs" onClick={() => setIsMenuOpen(false)}>Programs</Link>
-            <Link className="mobile-nav__link" href="/events" onClick={() => setIsMenuOpen(false)}>Events</Link>
-            <Link className="mobile-nav__link" href="/jobs" onClick={() => setIsMenuOpen(false)}>Job Board</Link>
-            <Link className="mobile-nav__link" href="/#community" onClick={() => setIsMenuOpen(false)}>Community</Link>
-            <Link className="mobile-nav__cta" href="#apply" onClick={() => setIsMenuOpen(false)}>Join the waitlist</Link>
           </nav>
+          <button className="site-header__cta desktop-only" onClick={() => setIsModalOpen(true)}>Community</button>
+
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
+          </button>
+
+          <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+            <nav className="mobile-nav__links">
+              <Link className="mobile-nav__link" href="/#programs" onClick={() => setIsMenuOpen(false)}>Programs</Link>
+              <Link className="mobile-nav__link" href="/events" onClick={() => setIsMenuOpen(false)}>Events</Link>
+              <Link className="mobile-nav__link" href="/jobs" onClick={() => setIsMenuOpen(false)}>Job Board</Link>
+
+              <button className="mobile-nav__cta" onClick={() => { setIsMenuOpen(false); setIsModalOpen(true); }}>Community</button>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <WhatsAppModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   )
 }
 

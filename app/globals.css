@@ -128,6 +128,14 @@ a {
     color: var(--text-primary);
 }
 
+button.site-nav__link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
+
 .site-header__cta {
     margin-left: 1.5rem;
     padding: 0.65rem 1.4rem;
@@ -137,6 +145,12 @@ a {
     font-weight: 600;
     font-size: 0.9rem;
     transition: background var(--transition), border-color var(--transition);
+}
+
+button.site-header__cta {
+    font-family: inherit;
+    cursor: pointer;
+    color: var(--text-primary);
 }
 
 .site-header__cta:hover,
@@ -238,6 +252,14 @@ a {
     text-decoration: none;
 }
 
+button.mobile-nav__link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
+
 .mobile-nav__cta {
     font-size: 1.25rem;
     font-weight: 600;
@@ -246,6 +268,12 @@ a {
     border: 1px solid var(--brand-accent);
     border-radius: 999px;
     margin-top: 1rem;
+}
+
+button.mobile-nav__cta {
+    font-family: inherit;
+    cursor: pointer;
+    background: transparent;
 }
 
 
@@ -594,6 +622,232 @@ main {
     color: var(--text-secondary);
     font-size: 1rem;
 }
+
+/* WhatsApp Card Styles */
+.community-card--whatsapp {
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.1) 0%, rgba(37, 211, 102, 0.05) 100%);
+    border: 2px solid rgba(37, 211, 102, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.community-card--whatsapp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.community-card--whatsapp:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37, 211, 102, 0.5);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.2);
+}
+
+.community-card--whatsapp:hover::before {
+    opacity: 1;
+}
+
+.whatsapp-card__icon {
+    margin-bottom: 0.5rem;
+}
+
+.whatsapp-card__cta {
+    color: #25D366;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.community-card--whatsapp:hover .whatsapp-card__cta {
+    transform: translateX(4px);
+}
+
+/* WhatsApp Modal Styles */
+.whatsapp-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.whatsapp-modal {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.whatsapp-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-primary);
+    z-index: 1;
+}
+
+.whatsapp-modal__close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+.whatsapp-modal__content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.whatsapp-modal__icon {
+    margin-bottom: 1.5rem;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.whatsapp-modal__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+}
+
+.whatsapp-modal__description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+}
+
+.whatsapp-modal__benefits {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.whatsapp-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.whatsapp-benefit svg {
+    flex-shrink: 0;
+}
+
+.whatsapp-modal__join-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-modal__join-btn:hover {
+    background: #20BD5C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-modal__privacy {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 1.5rem 0 0 0;
+}
+
+@media (max-width: 640px) {
+    .whatsapp-modal__content {
+        padding: 2rem 1.5rem;
+    }
+
+    .whatsapp-modal__title {
+        font-size: 1.5rem;
+    }
+
+    .whatsapp-modal__join-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 
 .section--cta {
     justify-items: center;
@@ -1985,7 +2239,7 @@ main {
     position: relative;
     width: 100%;
     padding-bottom: 177.78%;
-    /* 9:16 aspect ratio */
+    /* 9:16 aspect ratio for vertical videos */
     border-radius: var(--radius-md);
     overflow: hidden;
     background: #000;
@@ -1995,12 +2249,11 @@ main {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 130%;
-    height: 130%;
+    width: 300%;
+    height: 100%;
     border: none;
     display: block;
-    transform: translate(-50%, -50%) scale(1.3);
-    transform-origin: center center;
+    transform: translate(-50%, -50%);
 }
 
 .h_testimonial_lightbox {
