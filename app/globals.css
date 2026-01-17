@@ -2229,17 +2229,29 @@ main {
 }
 
 .h_testimonial_grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
     gap: 1.5rem;
     width: 100%;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Optional: hide scrollbar for cleaner look */
+}
+
+.h_testimonial_grid::-webkit-scrollbar {
+    display: none;
+    /* Optional: hide scrollbar for cleaner look */
 }
 
 .h_testimonial_video-wrapper {
     position: relative;
-    width: 100%;
-    padding-bottom: 177.78%;
-    /* 9:16 aspect ratio for vertical videos */
+    /* Fixed width for horizontal scrolling */
+    flex: 0 0 300px;
+    width: 300px;
+    aspect-ratio: 9 / 16;
+    height: auto;
     border-radius: var(--radius-md);
     overflow: hidden;
     background: #000;
@@ -2249,11 +2261,13 @@ main {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 300%;
+    width: 100%;
+    /* Changed from 300% to 100% since we want it to fit the wrapper */
     height: 100%;
     border: none;
     display: block;
     transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
 .h_testimonial_lightbox {
@@ -2263,8 +2277,10 @@ main {
     overflow: hidden;
     cursor: pointer;
     transition: transform var(--transition);
-    aspect-ratio: 3 / 4.5;
-    min-height: 420px;
+    aspect-ratio: 9 / 16;
+    min-height: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .h_testimonial_lightbox:hover {
@@ -2323,10 +2339,7 @@ main {
 }
 
 @media (max-width: 1200px) {
-    .h_testimonial_grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
+    /* Kept empty or remove grid overrides */
 }
 
 @media (max-width: 768px) {
@@ -2342,10 +2355,7 @@ main {
         padding-bottom: 4rem;
     }
 
-    .h_testimonial_grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
+    /* Remove grid overrides */
 
     .h_testimonial_overlay {
         padding: 1rem;
@@ -2372,8 +2382,13 @@ main {
         display: none;
     }
 
-    .h_testimonial_grid {
-        grid-template-columns: 1fr;
+    /* Remove grid overrides */
+    .h_testimonial_video-wrapper {
+        width: 260px;
+        /* Slightly smaller on mobile if needed, or keep 300px */
+        flex: 0 0 260px;
+        aspect-ratio: 9 / 16;
+        height: auto;
     }
 }
 

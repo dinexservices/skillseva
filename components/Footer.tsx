@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -40,36 +42,21 @@ export default function Footer() {
                 <Link href="/" className="footer_link-text">
                   <div>Home</div>
                 </Link>
-                <Link href="/cohorts" className="footer_link-text">
-                  <div>Our programs</div>
+                <Link href="/#programs" className="footer_link-text">
+                  <div>Programs</div>
                 </Link>
-                <Link href="/about-us" className="footer_link-text">
-                  <div>About us</div>
+                <Link href="/events" className="footer_link-text">
+                  <div>Events</div>
                 </Link>
-                <Link href="/about-us#team" className="footer_link-text">
-                  <div>Team</div>
+                <Link href="/jobs" className="footer_link-text">
+                  <div>Job Board</div>
+                </Link>
+                <Link href="/#community" className="footer_link-text">
+                  <div>Community</div>
                 </Link>
               </div>
 
-              <div className="footer_links-wrap">
-                <Link href="/contact" className="footer_link-text">
-                  <div>Contact us</div>
-                </Link>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSc4lAFRvvZYgwEZPZ-4iuJ3aVWM4Birs91ysFv4qouCLx-d6g/viewform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer_link-text"
-                >
-                  <div>Apply as Mentor</div>
-                </a>
-                <Link href="/refund-policy" className="footer_link-text">
-                  <div>Refund Policy</div>
-                </Link>
-                <Link href="/privacy-policy" className="footer_link-text">
-                  <div>Privacy Policy</div>
-                </Link>
-              </div>
+
             </div>
 
             <div className="footer-end-bar">
@@ -80,7 +67,7 @@ export default function Footer() {
               </div>
               <div className="socials-bar">
                 <a
-                  href="https://x.com/metvy_app/"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer_social-link"
@@ -95,7 +82,7 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/metvynetworking/"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer_social-link"
@@ -110,7 +97,7 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="https://www.instagram.com/metvy.app"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer_social-link"
@@ -125,7 +112,7 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="https://www.facebook.com/Metvyapp/"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer_social-link"

@@ -154,7 +154,6 @@ export default function EventsList() {
                 <div className="section__heading">
                     <span className="section__eyebrow">Upcoming Events</span>
                     <h2 style={{
-                        fontFamily: '"Instrument Serif", serif',
                         fontWeight: 500,
                         fontSize: 'clamp(2.5rem, 4vw + 1rem, 4rem)',
                         lineHeight: 1.1,
@@ -251,7 +250,6 @@ export default function EventsList() {
                 <div className="section__heading" style={{ marginTop: '8rem' }}>
                     <span className="section__eyebrow">Moments</span>
                     <h2 style={{
-                        fontFamily: '"Instrument Serif", serif',
                         fontWeight: 500,
                         fontSize: 'clamp(2.5rem, 4vw + 1rem, 4rem)',
                         lineHeight: 1.1,

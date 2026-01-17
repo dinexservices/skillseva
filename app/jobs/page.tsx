@@ -37,7 +37,6 @@ export default function JobsPage() {
                     </span>
 
                     <h1 style={{
-                        fontFamily: '"Instrument Serif", serif',
                         fontWeight: 500,
                         fontSize: 'clamp(3rem, 6vw + 1rem, 5rem)',
                         lineHeight: 1.05,
@@ -45,7 +44,7 @@ export default function JobsPage() {
                         margin: 0,
                         color: 'var(--text-primary)'
                     }}>
-                        SkillSeva <span className="brand-purple-highlight italic-emphasis">Job Board</span>
+                        <span className="brand-purple-highlight italic-emphasis">SkillSeva</span> Job Board
                     </h1>
 
                     <p style={{
