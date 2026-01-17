@@ -37,6 +37,7 @@ export default function Header() {
             />
           </Link>
           <nav className="site-nav" aria-label="Primary">
+            <Link className="site-nav__link" href="/">Home</Link>
             <Link className="site-nav__link" href="/#programs">Programs</Link>
             <Link className="site-nav__link" href="/events">Events</Link>
             <Link className="site-nav__link" href="/jobs">Job Board</Link>
@@ -55,6 +56,7 @@ export default function Header() {
 
           <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
             <nav className="mobile-nav__links">
+              <Link className="mobile-nav__link" href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
               <Link className="mobile-nav__link" href="/#programs" onClick={() => setIsMenuOpen(false)}>Programs</Link>
               <Link className="mobile-nav__link" href="/events" onClick={() => setIsMenuOpen(false)}>Events</Link>
               <Link className="mobile-nav__link" href="/jobs" onClick={() => setIsMenuOpen(false)}>Job Board</Link>
