@@ -6,32 +6,36 @@ import Link from 'next/link'
 export default function Testimonials() {
   const testimonials = [
     {
-      image: 'https://cdn.prod.website-files.com/63b304c11504f900a6192a63/686f3983a161407a651fa4d3_Harshil-video-frame.webp',
-      videoUrl: 'https://player.vimeo.com/video/1100187944?badge=0',
-      alt: 'Harshil MCP Testimonial Video',
-      name: 'Harshil',
-      program: 'Consulting Program'
+      videoUrl: 'https://drive.google.com/file/d/1KPdQVDswI7ksnQQvU4cRUzApsDH-ruqR/preview',
+      alt: 'Student Testimonial Video 1',
     },
     {
-      image: 'https://cdn.prod.website-files.com/63b304c11504f900a6192a63/686f398392099160ad7bb1b8_Shreya-video-frame.webp',
-      videoUrl: 'https://player.vimeo.com/video/1100188152?badge=0',
-      alt: 'Shreya Shinde MEP Testimonial Video',
-      name: 'Shreya Shinde',
-      program: 'Entrepreneurship Program'
+      videoUrl: 'https://drive.google.com/file/d/1FKTRv-bhki3spsf5Hu0SZIl2IEmHjxqN/preview',
+      alt: 'Student Testimonial Video 2',
     },
     {
-      image: 'https://cdn.prod.website-files.com/63b304c11504f900a6192a63/686f3983f31b166633b61169_Chirag-video-frame.webp',
-      videoUrl: 'https://player.vimeo.com/video/1100187555?badge=0',
-      alt: 'Chirag MDAP Testimonial Video',
-      name: 'Chirag',
-      program: 'Data Analytics'
+      videoUrl: 'https://drive.google.com/file/d/1PzsOPGuJ3phNdEN_D6WjI2KHsIFd4exu/preview',
+      alt: 'Student Testimonial Video 3',
     },
     {
-      image: 'https://cdn.prod.website-files.com/63b304c11504f900a6192a63/686f30f0b9b6299e39d4ee1c_video-frame-1.webp',
-      videoUrl: 'https://player.vimeo.com/video/1100187577?badge=0',
-      alt: 'Dhwani MFP Testimonial Video',
-      name: 'Dhwani',
-      program: 'Financial Program'
+      videoUrl: 'https://drive.google.com/file/d/1GPu0kkkiv4uSk2OXot6f0QdRYP7KgFys/preview',
+      alt: 'Student Testimonial Video 4',
+    },
+    {
+      videoUrl: 'https://drive.google.com/file/d/1J-ZH2q0lro0lC5WaQxd6VEa1oFdOfeZ0/preview',
+      alt: 'Student Testimonial Video 5',
+    },
+    {
+      videoUrl: 'https://drive.google.com/file/d/1_4MDPm1j5vBowZAijljZ1BA7PTilvrsj/preview',
+      alt: 'Student Testimonial Video 6',
+    },
+    {
+      videoUrl: 'https://drive.google.com/file/d/1Mm23SnnEnSqOm5otROdKWL_nyIl9IoOM/preview',
+      alt: 'Student Testimonial Video 7',
+    },
+    {
+      videoUrl: 'https://drive.google.com/file/d/1yOtlRmR4S6wbFrUoCdSMysA1EeKRqyAu/preview',
+      alt: 'Student Testimonial Video 8',
     }
   ]
 
@@ -42,40 +46,24 @@ export default function Testimonials() {
           <div className="h_testimonial-wrapper">
             <div className="h_testimonial_text-wrapper">
               <h2 className="v3_heading_h2">What Our <span className="brand-purple-highlight italic-emphasis">Students Say</span></h2>
-              <p className="v3_paragraph_medium">We’ll help you, choose the right path based on your goals, background , and interests.</p>
+              <p className="v3_paragraph_medium">We'll help you, choose the right path based on your goals, background , and interests.</p>
             </div>
             <div className="h_testimonial_grid">
               {testimonials.map((testimonial, index) => (
-                <Link
+                <div
                   key={index}
-                  href={testimonial.videoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h_testimonial_lightbox"
-                  aria-label={`open ${testimonial.alt}`}
+                  className="h_testimonial_video-wrapper"
                 >
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.alt}
-                    width={560}
-                    height={560}
-                    className="h_testimonial-video_cover"
-                    unoptimized
+                  <iframe
+                    src={testimonial.videoUrl}
+                    width="100%"
+                    height="315"
+                    allow="autoplay"
+                    allowFullScreen
+                    title={testimonial.alt}
+                    className="h_testimonial-video_embed"
                   />
-                  <div className="h_testimonial_overlay">
-                    <button className="h_testimonial_btn" type="button">
-                      <Image
-                        src="https://cdn.prod.website-files.com/63b304c11504f900a6192a63/687a765f5909137f52edf8b0_view.svg"
-                        alt="Play"
-                        width={20}
-                        height={20}
-                        className="play-icon-image"
-                        unoptimized
-                      />
-                      View Testimonial
-                    </button>
-                  </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>

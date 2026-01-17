@@ -75,7 +75,7 @@ export default function Footer() {
             <div className="footer-end-bar">
               <div className="footer_copyright-wrapper">
                 <div className="footer_copyright-text">
-                  <p>Copyright © SKILL SEVA. All rights reserved</p>
+                  <p>© 2025 SKILL SEVA. All rights reserved.</p>
                 </div>
               </div>
               <div className="socials-bar">

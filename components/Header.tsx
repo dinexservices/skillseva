@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +39,26 @@ export default function Header() {
           <Link className="site-nav__link" href="/jobs">Job Board</Link>
           <Link className="site-nav__link" href="/#community">Community</Link>
         </nav>
-        <Link className="site-header__cta" href="#apply">Join the waitlist</Link>
+        <Link className="site-header__cta desktop-only" href="#apply">Join the waitlist</Link>
+
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+        >
+          <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
+        </button>
+
+        <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+          <nav className="mobile-nav__links">
+            <Link className="mobile-nav__link" href="/#programs" onClick={() => setIsMenuOpen(false)}>Programs</Link>
+            <Link className="mobile-nav__link" href="/events" onClick={() => setIsMenuOpen(false)}>Events</Link>
+            <Link className="mobile-nav__link" href="/jobs" onClick={() => setIsMenuOpen(false)}>Job Board</Link>
+            <Link className="mobile-nav__link" href="/#community" onClick={() => setIsMenuOpen(false)}>Community</Link>
+            <Link className="mobile-nav__cta" href="#apply" onClick={() => setIsMenuOpen(false)}>Join the waitlist</Link>
+          </nav>
+        </div>
       </div>
     </header>
   )
