@@ -159,34 +159,21 @@ export default function EventsList() {
                 </div>
             )}
 
-            <section className="section section--events" style={{ justifyItems: 'center' }}>
+            <section className="section section--events events-section-container">
                 <div className="v3_padding-global">
                     <div className="v3_container">
-                        <div className="section__heading" style={{ textAlign: 'center', margin: '0 auto' }}>
-                            <span className="section__eyebrow" style={{ display: 'block', textAlign: 'center' }}>Upcoming Events</span>
-                            <h2 style={{
-                                fontWeight: 500,
-                                fontSize: 'clamp(2.5rem, 4vw + 1rem, 4rem)',
-                                lineHeight: 1.1,
-                                letterSpacing: '-0.01em',
-                                margin: 0,
-                                textAlign: 'center'
-                            }}>
+                        <div className="section__heading events-heading-upcoming">
+                            <span className="section__eyebrow events-eyebrow">Upcoming Events</span>
+                            <h2 className="events-title">
                                 Meetups, Classes & <span className="brand-purple-highlight italic-emphasis">Workshops</span>
                             </h2>
-                            <p style={{ maxWidth: '600px', margin: '1rem auto 0', color: 'var(--text-secondary)', textAlign: 'center' }}>Join our exclusive community events designed for high-trust networking and skill growth.</p>
+                            <p className="events-description">Join our exclusive community events designed for high-trust networking and skill growth.</p>
                         </div>
 
-                        <div className="h_blog_list" style={{
-                            marginTop: '3.5rem',
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            justifyContent: 'center',
-                            gap: '2.5rem'
-                        }}>
+                        <div className="h_blog_list events-list-grid">
                             {events.map((event, index) => (
-                                <div key={index} className="h_blog_card" style={{ maxWidth: '500px', margin: '0 auto' }}>
-                                    <div className="h_blog_card_image-wrapper" style={{ height: '220px' }}>
+                                <div key={index} className="h_blog_card">
+                                    <div className="h_blog_card_image-wrapper">
                                         <Image
                                             src={event.image}
                                             alt={event.title}
@@ -271,27 +258,15 @@ export default function EventsList() {
                             ))}
                         </div>
 
-                        <div className="section__heading" style={{ marginTop: '8rem', textAlign: 'center', margin: '8rem auto 0' }}>
-                            <span className="section__eyebrow" style={{ display: 'block', textAlign: 'center' }}>Moments</span>
-                            <h2 style={{
-                                fontWeight: 500,
-                                fontSize: 'clamp(2.5rem, 4vw + 1rem, 4rem)',
-                                lineHeight: 1.1,
-                                letterSpacing: '-0.01em',
-                                margin: 0,
-                                textAlign: 'center'
-                            }}>
+                        <div className="section__heading events-heading-moments">
+                            <span className="section__eyebrow events-eyebrow">Moments</span>
+                            <h2 className="events-title">
                                 Life at <span className="brand-purple-highlight italic-emphasis">SkillSeva</span>
                             </h2>
-                            <p style={{ maxWidth: '600px', margin: '1rem auto 0', color: 'var(--text-secondary)', textAlign: 'center' }}>Glimpses into our vibrant community of operators, mentors, and learners.</p>
+                            <p className="events-description">Glimpses into our vibrant community of operators, mentors, and learners.</p>
                         </div>
 
-                        <div className="gallery-grid" style={{
-                            marginTop: '3.5rem',
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(3, 1fr)',
-                            gap: '1.5rem'
-                        }}>
+                        <div className="gallery-grid events-gallery-grid">
                             <div className="gallery-item" style={{ position: 'relative', height: '300px', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)' }}>
                                 <Image src="/events/meetup-1.png" alt="Gallery 1" fill style={{ objectFit: 'cover' }} />
                             </div>
