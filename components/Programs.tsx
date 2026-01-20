@@ -44,26 +44,26 @@ export default function Programs() {
   ]
 
   return (
-    <section id="programs" className="section section--programs">
-      <div className="v3_padding-global">
-        <div className="v3_container">
-          <div className="h_program-wrapper">
-            <div className="h_program_text-wrapper">
-              <h2 className="v3_heading_h2" aria-label="Your Industry, Your Path">
-                Choose Your Industry <span className="brand-purple-highlight italic-emphasis">Define Your Path</span>
+    <section id="programs" className="max-w-content mx-auto px-4 grid gap-12 py-32">
+      <div className="px-4 md:px-8">
+        <div className="max-w-content mx-auto">
+          <div className="grid gap-16 p-0">
+            <div className="grid gap-6 max-w-[1200px] text-center mx-auto justify-items-center">
+              <h2 className="text-[clamp(2rem,3.5vw+1rem,3.5rem)] leading-[1.1] font-normal m-0 text-text-primary max-w-[1200px] w-full" aria-label="Your Industry, Your Path">
+                Choose Your Industry <span className="text-brand-accent italic">Define Your Path</span>
               </h2>
-              <div className="h_program_paragraph-wrapper">
-                <p className="v3_paragraph_medium">
+              <div className="mt-2 max-w-[748px] w-full">
+                <p className="text-[1.05rem] leading-[1.6] text-text-secondary m-0">
                   Whether you want a job, freelance clients, or build your own startup, SkillSeva helps you get there.
                 </p>
               </div>
             </div>
 
-            <div className="h_program_tab-wrapper">
-              <div className="h_program_tabs">
-                <div className="h_program_tabs_menu" role="tablist">
+            <div className="w-full">
+              <div className="grid gap-8">
+                <div className="flex justify-center gap-1.5 flex-wrap md:flex-nowrap" role="tablist">
                   <button
-                    className={`h_program_tabs_link ${activeTab === 'On-going' ? 'w--current' : ''}`}
+                    className={`bg-transparent border-none py-3 px-6 text-base font-medium cursor-pointer transition-colors border-b-2 mb-[-2px] ${activeTab === 'On-going' ? 'text-text-primary border-brand-accent' : 'text-text-muted border-transparent hover:text-text-primary'}`}
                     onClick={() => setActiveTab('On-going')}
                     role="tab"
                     aria-selected={activeTab === 'On-going'}
@@ -71,7 +71,7 @@ export default function Programs() {
                     <div>Ongoing cohort</div>
                   </button>
                   <button
-                    className={`h_program_tabs_link ${activeTab === 'Upcoming' ? 'w--current' : ''}`}
+                    className={`bg-transparent border-none py-3 px-6 text-base font-medium cursor-pointer transition-colors border-b-2 mb-[-2px] ${activeTab === 'Upcoming' ? 'text-text-primary border-brand-accent' : 'text-text-muted border-transparent hover:text-text-primary'}`}
                     onClick={() => setActiveTab('Upcoming')}
                     role="tab"
                     aria-selected={activeTab === 'Upcoming'}
@@ -80,29 +80,29 @@ export default function Programs() {
                   </button>
                 </div>
 
-                <div className="h_program_tabs_content">
+                <div className="mt-8">
                   {activeTab === 'On-going' && (
-                    <div className="h_program_list">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative border border-[#f5f7ff]/10">
                       {cohorts.map((program, index) => (
-                        <div key={index} className="h_program_item">
-                          <div className="h_program_card">
-                            <div className="h_program_card_image-wrapper">
+                        <div key={index} className="w-full relative h-full">
+                          <div className="grid gap-6 p-6 bg-white/80 border-2 border-black/12 rounded-2xl transition-all duration-200 hover:-translate-y-1 relative z-0 h-full content-between">
+                            <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-[#f5f7ff]/5">
                               <Image
                                 src={program.image}
                                 alt={program.alt}
                                 width={800}
                                 height={600}
-                                className="h_program_card_image"
+                                className="w-full h-full object-contain transition-transform duration-200 hover:scale-105"
                                 unoptimized
                               />
                             </div>
-                            <div className="h_program_card_info">
-                              <div className="h_program_card_text-wrapper">
-                                <h3 className="v3_heading_h4 color-black">{program.title}</h3>
-                                <p className="v3_paragraph_small">{program.description}</p>
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8">
+                              <div className="grid gap-2 flex-1 w-full">
+                                <h3 className="text-[1.8rem] leading-[1.2] font-normal m-0 text-text-primary font-serif">{program.title}</h3>
+                                <p className="text-[0.95rem] leading-[1.5] text-text-secondary m-0">{program.description}</p>
                               </div>
-                              <div className="h_program_card_btn-wrapper">
-                                <Link href={program.link} className="v3_btn main w-button">
+                              <div className="shrink-0 w-full md:w-auto">
+                                <Link href={program.link} className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-brand-accent to-brand-accent-highlight text-white shadow-none hover:-translate-y-0.5">
                                   View programs
                                 </Link>
                               </div>
@@ -114,29 +114,29 @@ export default function Programs() {
                   )}
 
                   {activeTab === 'Upcoming' && (
-                    <div className="h_program_list">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative border border-[#f5f7ff]/10">
                       {fellowships.map((program, index) => (
-                        <div key={index} className="h_program_item">
-                          <div className="h_program_card">
-                            <div className="h_program_card_image-wrapper">
+                        <div key={index} className="w-full relative h-full">
+                          <div className="grid gap-6 p-6 bg-white/80 border-2 border-black/12 rounded-2xl transition-all duration-200 hover:-translate-y-1 relative z-0 h-full content-between">
+                            <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-[#f5f7ff]/5">
                               <Image
                                 src={program.image}
                                 alt={program.alt}
                                 width={800}
                                 height={600}
-                                className="h_program_card_image"
+                                className="w-full h-full object-contain transition-transform duration-200 hover:scale-105"
                                 unoptimized
                               />
                             </div>
-                            <div className="h_program_card_info">
-                              <div className="h_program_card_text-wrapper">
-                                <h3 className="v3_heading_h4 color-black">{program.title}</h3>
-                                <p className="v3_paragraph_small">{program.description}</p>
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8">
+                              <div className="grid gap-2 flex-1 w-full">
+                                <h3 className="text-[1.8rem] leading-[1.2] font-normal m-0 text-text-primary font-serif">{program.title}</h3>
+                                <p className="text-[0.95rem] leading-[1.5] text-text-secondary m-0">{program.description}</p>
                               </div>
-                              <div className="h_program_card_btn-wrapper">
+                              <div className="shrink-0 w-full md:w-auto">
                                 <Link
                                   href={program.link}
-                                  className="v3_btn main w-button"
+                                  className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-[#59279D] to-[#7c4fd6] text-white shadow-none hover:-translate-y-0.5"
                                   target={program.external ? '_blank' : undefined}
                                   rel={program.external ? 'noopener noreferrer' : undefined}
                                 >

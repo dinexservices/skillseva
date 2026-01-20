@@ -16,7 +16,7 @@ function RegisterContent() {
 
     return (
         <>
-            <Header />
+       
             <main style={{ paddingTop: '2rem' }}>
                 <div className="section" style={{ maxWidth: '1200px' }}>
                     {/* Event Header */}
@@ -156,7 +156,7 @@ function RegisterContent() {
                     )}
                 </div>
             </main>
-            <Footer />
+     
         </>
     )
 }

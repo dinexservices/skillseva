@@ -9,7 +9,7 @@ export const metadata = {
 export default function JobsPage() {
     return (
         <>
-            <Header />
+       
             <main style={{
                 minHeight: '80vh',
                 display: 'flex',
@@ -88,7 +88,7 @@ export default function JobsPage() {
                     </div>
                 </div>
             </main>
-            <Footer />
+  
         </>
     )
 }

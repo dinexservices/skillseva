@@ -37,43 +37,51 @@ export default function BlogSection() {
   ]
 
   return (
-    <section className="section h_blog-section">
-      <div className="v3_padding-global">
-        <div className="v3_container">
-          <div className="h_blog-wrapper">
-            <div className="h_blog_text-wrapper">
-              <h2 className="v3_heading_h2">Latest Insights & <span className="brand-purple-highlight italic-emphasis">Articles</span></h2>
-              <p className="v3_paragraph_medium">
+    <section className="w-full relative py-24 bg-bg-secondary">
+      <div className="px-4 md:px-8">
+        <div className="max-w-content mx-auto">
+          <div className="grid gap-12">
+            <div className="grid gap-4 max-w-[1200px] text-center mx-auto justify-items-center">
+              <h2 className="text-[clamp(1.75rem,5vw,2.5rem)] md:text-[clamp(2rem,3.5vw+1rem,3.5rem)] leading-[1.1] font-normal m-0 text-text-primary">
+                Latest Insights & <span className="text-brand-accent italic">Articles</span>
+              </h2>
+              <p className="text-[1.05rem] leading-[1.6] text-text-secondary max-w-[942px] m-0">
                 Stay updated with expert insights, resources, and industry trends from our community of top operators and mentors
               </p>
             </div>
 
-            <div className="h_blog_grid">
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {blogPosts.map((post) => (
-                <article key={post.id} className="h_blog_card">
-                  <div className="h_blog_card-link" style={{ cursor: 'pointer' }}>
-                    <div className="h_blog_card_image-wrapper">
+                <article key={post.id} className="bg-white rounded-[24px] border border-black/8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg flex flex-col h-full">
+                  <div className="block h-full cursor-pointer decoration-0 text-inherit">
+                    <div className="w-full aspect-[4/3] relative overflow-hidden bg-bg-secondary">
                       <Image
                         src={post.image}
                         alt={post.title}
                         width={800}
                         height={600}
-                        className="h_blog_card_image"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         unoptimized
                       />
                     </div>
-                    <div className="h_blog_card_content">
-                      <div className="h_blog_card_category">{post.category}</div>
-                      <div className="h_blog_card_meta">
-                        <span className="h_blog_card_date">{post.date}</span>
-                        <span className="h_blog_card_separator">•</span>
-                        <span className="h_blog_card_read-time">{post.readTime}</span>
+                    <div className="p-6 flex flex-col gap-4 flex-1">
+                      <div className="inline-block text-[0.75rem] font-bold tracking-[0.05em] uppercase text-brand-accent bg-brand-accent/5 px-2.5 py-1 rounded-full w-fit">
+                        {post.category}
                       </div>
-                      <h3 className="h_blog_card_title">{post.title}</h3>
-                      <p className="h_blog_card_excerpt">{post.excerpt}</p>
-                      <div className="h_blog_card_footer">
-                        <span className="h_blog_card_author">{post.author}</span>
-                        <span className="h_blog_card_arrow">→</span>
+                      <div className="flex items-center gap-2 text-[0.8rem] text-text-muted font-medium">
+                        <span>{post.date}</span>
+                        <span>•</span>
+                        <span>{post.readTime}</span>
+                      </div>
+                      <h3 className="text-[1.2rem] leading-[1.3] font-semibold text-text-primary m-0 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-[0.95rem] leading-[1.6] text-text-secondary line-clamp-3 m-0 flex-1">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between mt-4 pt-4 border-t border-black/5">
+                        <span className="text-[0.85rem] font-semibold text-text-primary">{post.author}</span>
+                        <span className="text-brand-accent text-lg transition-transform duration-200 hover:translate-x-1">→</span>
                       </div>
                     </div>
                   </div>

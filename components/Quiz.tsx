@@ -5,13 +5,13 @@ import Link from 'next/link'
 
 export default function Quiz() {
     return (
-        <section className="section section--quiz">
-            <div className="v3_padding-global">
-                <div className="v3_container">
-                    <div className="h_quiz-wrapper">
-                        <div className="h_quiz_text-wrapper">
-                            <h2 className="v3_heading_h2">Not sure what you are interested in ?</h2>
-                            <p className="v3_paragraph_medium">
+        <section className="max-w-content mx-auto px-4 py-24">
+            <div className="px-4 md:px-8">
+                <div className="max-w-content mx-auto">
+                    <div className="p-12 rounded-[28px] bg-brand-accent/[0.03] border border-brand-accent/10 text-left flex flex-col items-start relative overflow-hidden">
+                        <div className="grid gap-4 mb-4 relative z-10">
+                            <h2 className="text-[clamp(2rem,3.5vw+1rem,3.5rem)] leading-[1.1] font-normal m-0 text-text-primary font-serif">Not sure what you are interested in ?</h2>
+                            <p className="text-[1.05rem] leading-[1.6] text-text-secondary m-0 text-left">
                                 Discover the perfect program for your goals. Whether you're exploring new skills or refining existing ones, we'll help you choose a path that aligns with your ambitions and sets you up for success
                             </p>
                         </div>
@@ -19,7 +19,7 @@ export default function Quiz() {
                             href="https://form.typeform.com/to/LeUdy7sm"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="v3_btn main w-button"
+                            className="inline-flex items-center justify-center p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-[#59279D] to-[#7c4fd6] text-white shadow-none hover:-translate-y-0.5 z-10"
                         >
                             Take a quiz
                         </Link>
@@ -28,7 +28,7 @@ export default function Quiz() {
                             alt=""
                             width={200}
                             height={200}
-                            className="h_quiz_bg-image"
+                            className="absolute bottom-0 right-0 opacity-10 pointer-events-none z-0"
                             unoptimized
                         />
                     </div>
