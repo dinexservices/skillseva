@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import WhatsAppModal from './WhatsAppModal'
+import { HiMenuAlt3, HiX } from 'react-icons/hi'
 
 import { usePathname } from 'next/navigation'
 
@@ -68,12 +69,16 @@ export default function Header() {
           </div>
 
           <button
-            className="md:hidden bg-transparent border-none cursor-pointer p-2 z-[1000] ml-auto block"
+            className="md:hidden bg-transparent border-none cursor-pointer p-2 z-[1000] ml-auto block text-text-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
-            <span className={`block w-6 h-0.5 bg-text-primary relative transition-colors duration-300 before:content-[''] before:absolute before:w-6 before:h-0.5 before:bg-text-primary before:transition-all before:duration-300 before:left-0 before:-top-2 after:content-[''] after:absolute after:w-6 after:h-0.5 after:bg-text-primary after:transition-all after:duration-300 after:left-0 after:-bottom-2 ${isMenuOpen ? 'bg-transparent before:rotate-45 before:top-0 after:-rotate-45 after:bottom-0' : ''}`}></span>
+            {isMenuOpen ? (
+              <HiX size={30} />
+            ) : (
+              <HiMenuAlt3 size={30} />
+            )}
           </button>
 
           <div className={`fixed top-0 left-0 w-full h-screen bg-white/98 backdrop-blur-md z-[900] flex flex-col justify-center items-center transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'}`}>
