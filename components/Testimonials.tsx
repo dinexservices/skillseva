@@ -66,10 +66,10 @@ export default function Testimonials() {
 
   return (
     <>
-      <section className="w-full relative py-32 bg-[#F3F5F9]">
+      <section className="w-full relative py-20 bg-[#F3F5F9]">
         <div className="max-w-content mx-auto px-4">
           <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-[clamp(1.75rem,5vw,2.5rem)] md:text-[3.5rem] leading-[1.1] font-normal m-0 text-text-primary mb-4">
+            <h2 className="text-[clamp(1.75rem,5vw,2.5rem)] md:text-[3.5rem] leading-[1.1] font-normal m-0 text-text-primary mb-4 text-balance">
               What Our <span className="text-brand-accent italic font-instrument">Students Say</span>
             </h2>
             <p className="text-[1.05rem] leading-[1.6] text-text-secondary max-w-[600px] m-0">

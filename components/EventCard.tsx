@@ -15,11 +15,6 @@ interface EventProps {
 }
 
 export default function EventCard({ title, date, location, category, image, link, embedUrl, description }: EventProps) {
-    const registerLink = embedUrl
-        ? `/events/register?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}`
-        : link || '#'
-
-    const isExternal = !!link && !embedUrl
 
     return (
         <div className="group relative bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm hover:shadow-brand hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
@@ -53,14 +48,21 @@ export default function EventCard({ title, date, location, category, image, link
                 </div>
 
                 <div className="mt-auto pt-6 border-t border-black/5">
-                    {isExternal ? (
+                    {embedUrl ? (
                         <Link
-                            href={registerLink}
-                            target="_blank"
+                            href={`/events/register?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&location=${encodeURIComponent(location)}&description=${encodeURIComponent(description || '')}&embedUrl=${encodeURIComponent(embedUrl)}&category=${encodeURIComponent(category)}`}
                             className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[#F5F5F5] text-text-primary font-medium hover:bg-brand-accent hover:text-white transition-all duration-200 group/btn"
                         >
                             <span className="w-5 h-5 flex items-center justify-center bg-brand-accent text-white rounded text-xs group-hover/btn:bg-white group-hover/btn:text-brand-accent transition-colors">i</span>
                             View Details & Register
+                        </Link>
+                    ) : link ? (
+                        <Link
+                            href={link}
+                            target="_blank"
+                            className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[#F5F5F5] text-text-primary font-medium hover:bg-brand-accent hover:text-white transition-all duration-200 group/btn"
+                        >
+                            Register Now
                         </Link>
                     ) : (
                         <button disabled className="w-full py-3.5 rounded-full bg-[#E5E5E5] text-[#999] font-medium cursor-not-allowed">

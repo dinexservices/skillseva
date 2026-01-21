@@ -21,7 +21,7 @@ export default function Home() {
         <Programs />
         <NotSureSection />
         <Testimonials />
-        <BlogSection />
+        {/* <BlogSection /> */}
       </main>
 
     </>

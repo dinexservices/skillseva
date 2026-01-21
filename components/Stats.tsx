@@ -54,14 +54,16 @@ export default function Stats() {
   ]
 
   return (
-    <section ref={sectionRef} className={`max-w-content mx-auto px-4 py-32 opacity-0 translate-y-10 transition-all duration-600 ease-out ${isVisible ? 'opacity-100 translate-y-0' : ''}`}>
+    <section ref={sectionRef} className={`max-w-full mx-auto px-4 py-20 opacity-0 translate-y-10 transition-all duration-600 ease-out ${isVisible ? 'opacity-100 translate-y-0' : ''}`}>
       <div className="w-full flex flex-col items-center">
-        <div className="grid gap-8 text-center w-full max-w-[900px]">
-          <div className="w-full mx-auto grid gap-4">
-            <h2 className="text-[2.75rem] md:text-[3.5rem] leading-[1.1] font-normal text-text-primary">
+        <div className="grid gap-8 text-center w-full max-w-content">
+          <div className="mx-auto grid gap-4">
+            <h2 className="text-[2rem] md:text-[3.5rem] leading-[1.1] font-normal text-text-primary text-balance">
               <span className="text-brand-accent italic font-instrument">SkillSeva</span> is for{' '}
-              <span className="text-brand-accent italic font-instrument">anyone and everyone</span>, who wants{' '}
-              <span className="text-brand-accent italic font-instrument">real skills not just certificates.</span>
+              <span className="">anyone and everyone</span>, who wants{' '}
+              <span className="text-brand-accent italic font-instrument">real skills</span>{' '}
+              <span className="tracking-tight text-[0.9em]">NOT JUST</span>{' '}
+              <span className="font-instrument italic text-brand-accent">certificates.</span>
             </h2>
             <p className="text-[0.95rem] text-text-secondary m-0 tracking-tight">Our community at a glance</p>
           </div>

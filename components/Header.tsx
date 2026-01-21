@@ -53,16 +53,18 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-8 ml-auto">
             <nav className="flex items-center gap-6" aria-label="Primary">
               <Link className={getLinkClass('/')} href="/">Home</Link>
-              <Link className="text-[0.95rem] font-medium text-[#9ca3af] hover:text-[#111827] transition-colors" href="/#programs">Programs</Link>
+              <Link className="text-[0.95rem] font-medium text-[#9ca3af] hover:text-[#111827] transition-colors" href="/our-cohort">Programs</Link>
+            
               <Link className={getLinkClass('/events')} href="/events">Events</Link>
+                <Link className={getLinkClass('/blog')} href="/blog">Blog</Link>
               <Link className={getLinkClass('/jobs')} href="/jobs">Job Board</Link>
             </nav>
-            <button
-              className="px-6 py-2.5 rounded-full bg-[#f3f4f6] text-[#1f2937] font-semibold text-[0.9rem] transition-all hover:bg-[#e5e7eb] cursor-pointer"
-              onClick={() => setIsModalOpen(true)}
+            <Link
+              className="px-6 py-2.5 rounded-full bg-brand-accent text-white font-semibold text-[0.9rem] transition-all hover:bg-brand-accent-highlight cursor-pointer transform hover:-translate-y-0.5"
+              href="https://chat.whatsapp.com/I9HeXlWP75M4trxoG7cITO"
             >
               Community
-            </button>
+            </Link>
           </div>
 
           <button
@@ -77,11 +79,13 @@ export default function Header() {
           <div className={`fixed top-0 left-0 w-full h-screen bg-white/98 backdrop-blur-md z-[900] flex flex-col justify-center items-center transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'}`}>
             <nav className="flex flex-col gap-8 items-center text-center">
               <Link className="text-2xl font-medium text-text-primary decoration-0" href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-              <Link className="text-2xl font-medium text-text-primary decoration-0" href="/#programs" onClick={() => setIsMenuOpen(false)}>Programs</Link>
+              <Link className="text-2xl font-medium text-text-primary decoration-0" href="/our-cohort" onClick={() => setIsMenuOpen(false)}>Cohorts</Link>
               <Link className="text-2xl font-medium text-text-primary decoration-0" href="/events" onClick={() => setIsMenuOpen(false)}>Events</Link>
+                            <Link className="text-2xl font-medium text-text-primary decoration-0" href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+
               <Link className="text-2xl font-medium text-text-primary decoration-0" href="/jobs" onClick={() => setIsMenuOpen(false)}>Job Board</Link>
 
-              <button className="text-xl font-semibold text-brand-accent px-6 py-3 border border-brand-accent rounded-full mt-4 bg-transparent cursor-pointer" onClick={() => { setIsMenuOpen(false); setIsModalOpen(true); }}>Community</button>
+              <Link href="https://chat.whatsapp.com/I9HeXlWP75M4trxoG7cITO" className="text-xl font-semibold text-brand-accent px-6 py-3 border border-brand-accent rounded-full mt-4 bg-transparent cursor-pointer" onClick={() => { setIsMenuOpen(false); setIsModalOpen(true); }}>Community</Link>
             </nav>
           </div>
         </div>

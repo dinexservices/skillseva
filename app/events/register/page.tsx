@@ -2,8 +2,6 @@
 
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 
 function RegisterContent() {
     const searchParams = useSearchParams()
@@ -15,167 +13,88 @@ function RegisterContent() {
     const category = searchParams.get('category') || ''
 
     return (
-        <>
-       
-            <main style={{ paddingTop: '2rem' }}>
-                <div className="section" style={{ maxWidth: '1200px' }}>
-                    {/* Event Header */}
-                    <div style={{
-                        padding: '3rem 2rem',
-                        borderRadius: 'var(--radius-lg)',
-                        background: 'linear-gradient(135deg, rgba(89, 39, 157, 0.08), rgba(255, 255, 255, 0.95))',
-                        border: '1px solid rgba(89, 39, 157, 0.15)',
-                        backdropFilter: 'blur(18px)'
-                    }}>
+        <main className="min-h-screen pt-24 pb-20 px-4">
+            <div className="max-w-4xl mx-auto space-y-8">
+                {/* Event Header */}
+                <div className="relative overflow-hidden rounded-3xl bg-secondary/30 border border-brand-accent/10 p-8 md:p-12 backdrop-blur-xl">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+
+                    <div className="relative z-10">
                         {category && (
-                            <span style={{
-                                display: 'inline-block',
-                                fontSize: '0.85rem',
-                                fontWeight: '600',
-                                letterSpacing: '0.05em',
-                                textTransform: 'uppercase',
-                                color: 'var(--brand-accent)',
-                                padding: '0.6rem 1.25rem',
-                                border: '1px solid rgba(89, 39, 157, 0.2)',
-                                borderRadius: '999px',
-                                background: 'rgba(89, 39, 157, 0.04)',
-                                marginBottom: '1.5rem'
-                            }}>
+                            <span className="inline-block px-3 py-1 rounded-full bg-brand-accent/5 border border-brand-accent/20 text-brand-accent text-xs font-bold uppercase tracking-wider mb-4">
                                 {category}
                             </span>
                         )}
-                        <h1 style={{
-                            fontSize: 'clamp(2rem, 3.8vw + 1rem, 3.2rem)',
-                            lineHeight: '1.1',
-                            fontWeight: '500',
-                            letterSpacing: '-0.02em',
-                            margin: '0 0 1.5rem 0',
-                            color: 'var(--text-primary)'
-                        }}>
+                        <h1 className="text-[clamp(1.75rem,3vw+1rem,2.75rem)] leading-[1.15] font-medium tracking-tight text-text-primary mb-4">
                             {title}
                         </h1>
-                        <div style={{
-                            display: 'flex',
-                            gap: '2rem',
-                            flexWrap: 'wrap',
-                            fontSize: '1.05rem',
-                            color: 'var(--text-secondary)'
-                        }}>
+                        <div className="flex flex-wrap gap-x-6 gap-y-3 text-text-secondary text-base">
                             {date && (
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <span>📅</span>
+                                <div className="flex items-center gap-2">
+                                    <span className="text-lg">🗓️</span>
                                     <span>{date}</span>
                                 </div>
                             )}
                             {location && (
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <span>📍</span>
+                                <div className="flex items-center gap-2">
+                                    <span className="text-lg">📍</span>
                                     <span>{location}</span>
                                 </div>
                             )}
                         </div>
                     </div>
-
-                    {/* Description Section */}
-                    {description && (
-                        <div style={{
-                            padding: '2rem',
-                            borderRadius: 'var(--radius-lg)',
-                            background: 'rgba(255, 255, 255, 0.82)',
-                            border: '1px solid rgba(0, 0, 0, 0.08)',
-                            backdropFilter: 'blur(18px)',
-                            borderLeft: '4px solid var(--brand-accent)'
-                        }}>
-                            <h2 style={{
-                                fontSize: '1.35rem',
-                                fontWeight: '600',
-                                marginBottom: '1rem',
-                                color: 'var(--text-primary)',
-                                margin: '0 0 1rem 0'
-                            }}>
-                                About This Event
-                            </h2>
-                            <p style={{
-                                fontSize: '1.05rem',
-                                lineHeight: '1.6',
-                                color: 'var(--text-secondary)',
-                                margin: 0
-                            }}>
-                                {description}
-                            </p>
-                        </div>
-                    )}
-
-                    {/* Registration Form */}
-                    {embedUrl ? (
-                        <div style={{
-                            borderRadius: 'var(--radius-lg)',
-                            overflow: 'hidden',
-                            border: '1px solid rgba(0, 0, 0, 0.08)',
-                            background: 'rgba(255, 255, 255, 0.95)',
-                            backdropFilter: 'blur(18px)'
-                        }}>
-                            <div style={{
-                                padding: '1.5rem 2rem',
-                                background: 'linear-gradient(115deg, #59279D, #7c4fd6)',
-                                color: 'white'
-                            }}>
-                                <h2 style={{
-                                    fontSize: '1.6rem',
-                                    fontWeight: '600',
-                                    margin: 0
-                                }}>
-                                    Registration Form
-                                </h2>
-                            </div>
-                            <div style={{ padding: '0.5rem' }}>
-                                <iframe
-                                    src={embedUrl}
-                                    width="100%"
-                                    height="1200"
-                                    frameBorder="0"
-                                    marginHeight={0}
-                                    marginWidth={0}
-                                    style={{ border: 'none', display: 'block' }}
-                                >
-                                    Loading…
-                                </iframe>
-                            </div>
-                        </div>
-                    ) : (
-                        <div style={{
-                            textAlign: 'center',
-                            padding: '4rem 2rem',
-                            color: 'var(--text-muted)',
-                            borderRadius: 'var(--radius-lg)',
-                            border: '1px solid rgba(0, 0, 0, 0.08)',
-                            background: 'rgba(255, 255, 255, 0.82)'
-                        }}>
-                            <p style={{ margin: 0, fontSize: '1.05rem' }}>No registration form available for this event.</p>
-                        </div>
-                    )}
                 </div>
-            </main>
-     
-        </>
+
+                {/* Description Section */}
+                {description && (
+                    <div className="bg-white/80 backdrop-blur-xl rounded-2xl border border-black/5 p-6 md:p-8 border-l-4 border-l-brand-accent">
+                        <h2 className="text-xl font-semibold text-text-primary mb-3">
+                            About This Event
+                        </h2>
+                        <p className="text-base leading-relaxed text-text-secondary">
+                            {description}
+                        </p>
+                    </div>
+                )}
+
+                {/* Registration Form */}
+                {embedUrl ? (
+                    <div className="bg-white rounded-3xl border border-black/5 overflow-hidden shadow-sm">
+                        <div className="bg-gradient-to-r from-brand-accent to-brand-accent-highlight p-5 md:p-6 text-white">
+                            <h2 className="text-xl font-semibold m-0">
+                                Registration Form
+                            </h2>
+                        </div>
+                        <div className="p-1 bg-white">
+                            <iframe
+                                src={embedUrl}
+                                className="w-full min-h-[1200px] border-none block"
+                                title="Registration Form"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                ) : (
+                    <div className="text-center py-20 px-4 bg-secondary/30 rounded-3xl border border-black/5">
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-black/5 text-3xl mb-4">
+                            📝
+                        </div>
+                        <p className="text-base text-text-secondary font-medium">No registration form available for this event.</p>
+                        <p className="text-text-muted mt-2 text-sm">Please check back later or contact us for more information.</p>
+                    </div>
+                )}
+            </div>
+        </main>
     )
 }
 
 export default function RegisterPage() {
     return (
         <Suspense fallback={
-            <div style={{
-                minHeight: '100vh',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}>
-                <div style={{
-                    color: 'var(--text-secondary)',
-                    fontSize: '1.2rem',
-                    fontWeight: '500'
-                }}>
-                    Loading...
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="animate-pulse flex flex-col items-center gap-4">
+                    <div className="w-12 h-12 rounded-full border-4 border-brand-accent border-t-transparent animate-spin" />
+                    <span className="text-text-secondary font-medium">Loading event details...</span>
                 </div>
             </div>
         }>

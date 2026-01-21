@@ -16,13 +16,16 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
     useEffect(() => {
         if (isOpen) {
             setShow(true)
-            document.body.style.overflow = 'hidden' // Prevent background scrolling
+            document.body.style.overflow = 'hidden'
+            document.documentElement.style.overflow = 'hidden' // Ensure scroll is disabled on html too
         } else {
             setShow(false)
             document.body.style.overflow = 'unset'
+            document.documentElement.style.overflow = 'unset'
         }
         return () => {
             document.body.style.overflow = 'unset'
+            document.documentElement.style.overflow = 'unset'
         }
     }, [isOpen])
 
@@ -37,7 +40,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
 
     return (
         <div
-            className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm transition-opacity duration-300 ${show ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+            className={`fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm transition-opacity duration-300 ${show ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
             onClick={handleBackdropClick}
         >
             <div className={`relative w-full max-w-5xl bg-black rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-300 ${show ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'}`}>

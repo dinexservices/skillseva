@@ -16,40 +16,40 @@ const icons = [
     {
         name: 'JavaScript',
         src: jsIcon,
-        top: '15%',
-        left: '25%',
+        top: '35%', // Moved up
+        left: '5%',  // Moved out
         delay: '0s',
         size: 90,
     },
     {
         name: 'Node.js',
         src: nodeIcon,
-        top: '85%',
-        left: '90%',
+        top: '75%', // Moved down
+        left: '5%', // Moved out
         delay: '2s',
         size: 100,
     },
     {
         name: 'Figma',
         src: figmaIcon,
-        top: '55%',
-        left: '22%',
+        top: '88%', // Moved down
+        left: '2%',
         delay: '1s',
         size: 120,
     },
     {
         name: 'Video',
         src: videoIcon,
-        top: '65%',
-        left: '75%',
+        top: '55%', // Moved UP away from text
+        left: '15%', // Moved out
         delay: '3s',
         size: 95,
     },
     {
         name: 'React',
         src: reactIcon,
-        top: '10%',
-        left: '60%',
+        top: '60%', // Moved DOWN away from buttons
+        left: '78%', // Moved out
         delay: '4s',
         size: 110,
     },
@@ -57,23 +57,23 @@ const icons = [
         name: 'Photoshop',
         src: photoshopIcon,
         top: '85%',
-        left: '5%',
+        left: '85%',
         delay: '1.5s',
         size: 90,
     },
     {
         name: 'UI/UX',
         src: uxIcon,
-        top: '40%',
-        left: '88%',
+        top: '30%', // Moved UP
+        left: '85%',
         delay: '2.5s',
         size: 105,
     },
     {
         name: 'AI',
         src: aiIcon,
-        top: '38%',
-        left: '0%',
+        top: '45%',
+        left: '90%', // Moved out
         delay: '0.5s',
         size: 95,
     },

@@ -16,13 +16,13 @@ const marqueeCompanies = [...companies, ...companies, ...companies]
 
 export default function BrandMarquee() {
     return (
-        <section className="w-full py-32 md:py-40 overflow-hidden bg-bg-secondary/30 border-y border-black/5">
-            <div className="max-w-content mx-auto px-4 mb-20 text-center">
-                <h2 className="text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.1]  text-text-primary mb-6">
-                    Learn from experts working <br />
-                    across <span className="text-brand-accent italic font-instrument">50+ brands</span>
+        <section className="w-full py-16 md:py-24 overflow-hidden bg-bg-secondary/30 border-y border-black/5">
+            <div className="max-w-content mx-auto px-4 mb-12 text-center">
+                <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] text-text-primary mb-4 text-balance">
+                    Learn from experts working across{' '}
+                    <span className="text-brand-accent italic font-instrument">50+ brands</span>
                 </h2>
-                <p className="text-[1.35rem] text-text-secondary max-w-[800px] mx-auto leading-relaxed">
+                <p className="text-[1.05rem] text-text-secondary max-w-[800px] mx-auto leading-relaxed">
                     Our mentors come from top startups, enterprises, and fast-growing companies,
                     bringing real-world experience, not text book theory
                 </p>

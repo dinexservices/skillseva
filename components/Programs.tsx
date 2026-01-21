@@ -44,7 +44,7 @@ export default function Programs() {
   ]
 
   return (
-    <section id="programs" className="max-w-content mx-auto px-4 grid gap-12 py-32">
+    <section id="programs" className="max-w-content mx-auto px-4 grid gap-12 py-20">
       <div className="px-4 md:px-8">
         <div className="max-w-content mx-auto">
           <div className="grid gap-16 p-0">
@@ -61,9 +61,9 @@ export default function Programs() {
 
             <div className="w-full">
               <div className="grid gap-8">
-                <div className="flex justify-center gap-1.5 flex-wrap md:flex-nowrap" role="tablist">
+                <div className="flex justify-start gap-8 flex-wrap md:flex-nowrap" role="tablist">
                   <button
-                    className={`bg-transparent border-none py-3 px-6 text-base font-medium cursor-pointer transition-colors border-b-2 mb-[-2px] ${activeTab === 'On-going' ? 'text-text-primary border-brand-accent' : 'text-text-muted border-transparent hover:text-text-primary'}`}
+                    className={`bg-transparent border-0 border-b-2 py-3 px-1 text-base font-medium cursor-pointer transition-colors ${activeTab === 'On-going' ? 'text-text-primary border-brand-accent' : 'text-text-muted border-transparent hover:text-text-primary'}`}
                     onClick={() => setActiveTab('On-going')}
                     role="tab"
                     aria-selected={activeTab === 'On-going'}
@@ -71,7 +71,7 @@ export default function Programs() {
                     <div>Ongoing cohort</div>
                   </button>
                   <button
-                    className={`bg-transparent border-none py-3 px-6 text-base font-medium cursor-pointer transition-colors border-b-2 mb-[-2px] ${activeTab === 'Upcoming' ? 'text-text-primary border-brand-accent' : 'text-text-muted border-transparent hover:text-text-primary'}`}
+                    className={`bg-transparent border-0 border-b-2 py-3 px-1 text-base font-medium cursor-pointer transition-colors ${activeTab === 'Upcoming' ? 'text-text-primary border-brand-accent' : 'text-text-muted border-transparent hover:text-text-primary'}`}
                     onClick={() => setActiveTab('Upcoming')}
                     role="tab"
                     aria-selected={activeTab === 'Upcoming'}
@@ -86,7 +86,7 @@ export default function Programs() {
                       {cohorts.map((program, index) => (
                         <div key={index} className="w-full relative h-full">
                           <div className="grid gap-6 p-6 bg-white/80 border-2 border-black/12 rounded-2xl transition-all duration-200 hover:-translate-y-1 relative z-0 h-full content-between">
-                            <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-[#f5f7ff]/5">
+                            <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden bg-[#f5f7ff]/5">
                               <Image
                                 src={program.image}
                                 alt={program.alt}
@@ -118,7 +118,7 @@ export default function Programs() {
                       {fellowships.map((program, index) => (
                         <div key={index} className="w-full relative h-full">
                           <div className="grid gap-6 p-6 bg-white/80 border-2 border-black/12 rounded-2xl transition-all duration-200 hover:-translate-y-1 relative z-0 h-full content-between">
-                            <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-[#f5f7ff]/5">
+                            <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden bg-[#f5f7ff]/5">
                               <Image
                                 src={program.image}
                                 alt={program.alt}
@@ -136,7 +136,7 @@ export default function Programs() {
                               <div className="shrink-0 w-full md:w-auto">
                                 <Link
                                   href={program.link}
-                                  className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-[#59279D] to-[#7c4fd6] text-white shadow-none hover:-translate-y-0.5"
+                                  className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-brand-accent to-brand-accent-highlight text-white shadow-none hover:-translate-y-0.5"
                                   target={program.external ? '_blank' : undefined}
                                   rel={program.external ? 'noopener noreferrer' : undefined}
                                 >

@@ -53,6 +53,7 @@ body {
     background: radial-gradient(140% 140% at 10% 0%, rgba(89, 39, 157, 0.04) 0%, transparent 48%), var(--bg-primary);
     color: var(--text-primary);
     min-height: 100%;
+    overflow-x: hidden;
 }
 
 /* Global font applications */
@@ -117,4 +118,29 @@ em,
 
 .animate-scroll {
     animation: scroll 40s linear infinite;
+}
+
+/* Scroll Reveal Animations */
+.reveal--initial {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero--visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section--stats-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }

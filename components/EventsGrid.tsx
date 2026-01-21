@@ -3,7 +3,7 @@
 import EventCard from './EventCard'
 
 const events = [
-    {
+ {
         category: 'MEETUP',
         title: 'SkillSeva Offline Meetup: Delhi NCR',
         date: 'Coming Soon',
@@ -18,7 +18,6 @@ const events = [
         category: 'MEETUP',
         title: 'SkillSeva Offline Meetup: Gurgaon',
         date: 'February 2026',
-     
         location: 'Gurgaon',
         image: '/events/meetup-2.png',
         type: 'In-person',

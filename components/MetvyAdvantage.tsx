@@ -37,12 +37,12 @@ export default function BlogSection() {
   ]
 
   return (
-    <section className="w-full relative py-24 bg-bg-secondary">
+    <section className="w-full relative py-16 md:py-20 bg-bg-secondary">
       <div className="px-4 md:px-8">
         <div className="max-w-content mx-auto">
           <div className="grid gap-12">
             <div className="grid gap-4 max-w-[1200px] text-center mx-auto justify-items-center">
-              <h2 className="text-[clamp(1.75rem,5vw,2.5rem)] md:text-[clamp(2rem,3.5vw+1rem,3.5rem)] leading-[1.1] font-normal m-0 text-text-primary">
+              <h2 className="text-[clamp(1.75rem,5vw,2.5rem)] md:text-[clamp(2rem,3.5vw+1rem,3.5rem)] leading-[1.1] font-normal m-0 text-text-primary text-balance">
                 Latest Insights & <span className="text-brand-accent italic">Articles</span>
               </h2>
               <p className="text-[1.05rem] leading-[1.6] text-text-secondary max-w-[942px] m-0">
