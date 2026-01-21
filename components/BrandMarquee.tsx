@@ -22,7 +22,7 @@ export default function BrandMarquee() {
                     Learn from experts working across{' '}
                     <span className="text-brand-accent italic font-instrument">50+ brands</span>
                 </h2>
-                <p className="text-[1.05rem] text-text-secondary max-w-[800px] mx-auto leading-relaxed">
+                <p className="text-[1.05rem] text-text-secondary max-w-[700px] mx-auto leading-relaxed">
                     Our mentors come from top startups, enterprises, and fast-growing companies,
                     bringing real-world experience, not text book theory
                 </p>

@@ -36,11 +36,11 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 z-[100] bg-white/85 backdrop-blur-[20px] border-b border-black/6 w-full transition-all duration-300 ${isScrolled ? 'shadow-sm' : ''}`}>
+      <header className={`fixed top-0 z-[100] bg-white/60 backdrop-blur-[100px] border-b border-black/6 w-full transition-all duration-300 ${isScrolled ? 'shadow-sm' : ''}`}>
         <div className="max-w-[1200px] mx-auto px-4 md:px-6 py-4 flex items-center justify-between relative">
           <Link className={`inline-flex items-center transition-all duration-150 ease-out z-10 py-1 ${isScrolled ? 'transform-none' : 'scale-100'}`} href="/">
             <Image
-              className="w-auto h-[55px] md:h-[40px] object-contain origin-center transition-transform duration-200"
+              className="w-auto h-[45px] md:h-[35px] object-contain origin-center transition-transform duration-200"
               src="/SkillSeva Logo_3 (1).png"
               alt="SkillSeva logo"
               width={250}
@@ -53,10 +53,10 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-8 ml-auto">
             <nav className="flex items-center gap-6" aria-label="Primary">
               <Link className={getLinkClass('/')} href="/">Home</Link>
-              <Link className="text-[0.95rem] font-medium text-[#9ca3af] hover:text-[#111827] transition-colors" href="/our-cohort">Programs</Link>
-            
+              <Link className={getLinkClass('/cohorts')} href="/cohorts">Cohorts</Link>
+
               <Link className={getLinkClass('/events')} href="/events">Events</Link>
-                <Link className={getLinkClass('/blog')} href="/blog">Blog</Link>
+              <Link className={getLinkClass('/media')} href="/media">Media</Link>
               <Link className={getLinkClass('/jobs')} href="/jobs">Job Board</Link>
             </nav>
             <Link
@@ -79,9 +79,9 @@ export default function Header() {
           <div className={`fixed top-0 left-0 w-full h-screen bg-white/98 backdrop-blur-md z-[900] flex flex-col justify-center items-center transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'}`}>
             <nav className="flex flex-col gap-8 items-center text-center">
               <Link className="text-2xl font-medium text-text-primary decoration-0" href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-              <Link className="text-2xl font-medium text-text-primary decoration-0" href="/our-cohort" onClick={() => setIsMenuOpen(false)}>Cohorts</Link>
+              <Link className="text-2xl font-medium text-text-primary decoration-0" href="/cohorts" onClick={() => setIsMenuOpen(false)}>Cohorts</Link>
               <Link className="text-2xl font-medium text-text-primary decoration-0" href="/events" onClick={() => setIsMenuOpen(false)}>Events</Link>
-                            <Link className="text-2xl font-medium text-text-primary decoration-0" href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+              <Link className="text-2xl font-medium text-text-primary decoration-0" href="/media" onClick={() => setIsMenuOpen(false)}>Media</Link>
 
               <Link className="text-2xl font-medium text-text-primary decoration-0" href="/jobs" onClick={() => setIsMenuOpen(false)}>Job Board</Link>
 
@@ -90,7 +90,7 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <WhatsAppModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
     </>
   )
 }

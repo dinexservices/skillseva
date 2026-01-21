@@ -5,9 +5,9 @@ import EventCard from './EventCard'
 const events = [
  {
         category: 'MEETUP',
-        title: 'SkillSeva Offline Meetup: Delhi NCR',
-        date: 'Coming Soon',
-        location: 'Delhi NCR',
+        title: 'SkillSeva Offline Meetup: Delhi',
+        date: '31 jan, 2026',
+        location: 'goSTOPS Delhi, Delhi Gate, Daryaganj,  Delhi, 110002',
         image: '/events/meetup-1.png',
         type: 'In-person',
         link: 'https://forms.gle/nKVoZbJp5pzpRqwo8',

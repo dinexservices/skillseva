@@ -65,7 +65,7 @@ export default function Stats() {
               <span className="tracking-tight text-[0.9em]">NOT JUST</span>{' '}
               <span className="font-instrument italic text-brand-accent">certificates.</span>
             </h2>
-            <p className="text-[0.95rem] text-text-secondary m-0 tracking-tight">Our community at a glance</p>
+            <p className="text-[1.05rem] text-text-secondary m-0 tracking-tight">Our community at a glance</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {facts.map((fact, index) => (
@@ -74,7 +74,7 @@ export default function Stats() {
                   <div className="text-[2.75rem] font-medium text-brand-accent tracking-tight">{fact.number}</div>
                   <div className="text-[2.25rem] font-medium text-brand-accent mb-1.5">{fact.suffix}</div>
                 </div>
-                <p className="text-[0.9rem] text-text-secondary font-normal tracking-wide">{fact.label}</p>
+                <p className="text-[1rem] text-text-secondary font-normal tracking-wide">{fact.label}</p>
               </div>
             ))}
           </div>

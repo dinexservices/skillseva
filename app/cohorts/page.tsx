@@ -8,19 +8,20 @@ export default function OurCohortPage() {
     const [activeTab, setActiveTab] = useState('On-going')
 
     const cohorts = [
+        
         {
-            title: 'Consultancy Program',
-            description: 'Gain expert guidance to solve real-world business challenges',
+            title: 'MERN Stack Cohort',
+            description: 'Master Full Stack Development with Web Fundamentals, JavaScript, and MERN stack.',
             image: '/245f22a0a73a11804301eee384478f1aaf0d8407.png',
-            link: '/our-cohort/skillseva-consultancy-program',
-            alt: 'Consultancy Program'
+            link: '/cohorts/skillseva-mern-stack-cohort',
+            alt: 'MERN Stack Cohort'
         },
         {
-            title: 'Entrepreneurship Program',
-            description: 'Build, launch, and grow your own innovative ventures',
+            title: 'UI/UX Design Cohort',
+            description: 'Master Design Thinking & User Experience with our comprehensive 12-week program.',
             image: '/245f22a0a73a11804301eee384478f1aaf0d8407.png',
-            link: '/our-cohort/skillseva-entrepreneurship-program',
-            alt: 'Entrepreneurship Program'
+            link: '/cohorts/skillseva-ui-ux-design-cohort',
+            alt: 'UI/UX Design Cohort'
         }
     ]
 
@@ -44,7 +45,7 @@ export default function OurCohortPage() {
     ]
 
     return (
-        <main className="min-h-screen pt-24 pb-20 px-4">
+        <main className="min-h-screen pt-32 pb-20 px-4">
             <div className="max-w-content mx-auto px-4 md:px-8">
                 <div className="grid gap-16">
                     {/* Header Section */}
@@ -103,7 +104,7 @@ export default function OurCohortPage() {
                                                         </div>
                                                         <div className="shrink-0 w-full md:w-auto">
                                                             <Link href={program.link} className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-brand-accent to-brand-accent-highlight text-white shadow-none hover:-translate-y-0.5">
-                                                                View programs
+                                                                View Details
                                                             </Link>
                                                         </div>
                                                     </div>
@@ -140,7 +141,7 @@ export default function OurCohortPage() {
                                                                 target={program.external ? '_blank' : undefined}
                                                                 rel={program.external ? 'noopener noreferrer' : undefined}
                                                             >
-                                                                View programs
+                                                                View Details
                                                             </Link>
                                                         </div>
                                                     </div>

@@ -47,7 +47,7 @@ export default function BlogPage() {
                     <div className="max-w-content mx-auto px-4 relative z-10">
                         <div className="grid gap-4 max-w-[1200px] text-center mx-auto mb-16">
                             <h1 className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-normal m-0 text-text-primary text-balance">
-                                SkillSeva <span className="text-brand-accent italic">Resources</span>
+                                SkillSeva <span className="text-brand-accent italic">Media</span>
                             </h1>
                             <p className="text-[1.1rem] text-text-secondary max-w-[800px] mx-auto text-balance">
                                 Watch expert sessions, tutorials, and career advice directly from our mentors and community.

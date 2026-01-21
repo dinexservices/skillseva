@@ -5,13 +5,13 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer id="footer" className="w-full border-t border-white/10 py-16 bg-brand-accent backdrop-blur-[20px]">
+    <footer id="footer" className="w-full border-t border-white/10 pt-16 pb-4 bg-brand-accent backdrop-blur-[20px]">
       <div className="px-4 md:px-8">
         <div className="max-w-content mx-auto">
           <div className="grid gap-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 items-start">
               <div className="md:col-span-2 max-w-[200px]">
-                <Link href="/" className="block transition-opacity hover:opacity-80">
+                <Link href="/" className="block  ">
                   <Image
                     src="/SkillSeva Logo.png"
                     alt="SkillSeva logo"
@@ -42,7 +42,7 @@ export default function Footer() {
                 <Link href="/" className="text-[0.95rem] hover:text-white transition-colors decoration-0">
                   <div>Home</div>
                 </Link>
-                <Link href="/our-cohort" className="text-[0.95rem] hover:text-white transition-colors decoration-0">
+                <Link href="/cohorts" className="text-[0.95rem] hover:text-white transition-colors decoration-0">
                   <div>Programs</div>
                 </Link>
                 <Link href="/events" className="text-[0.95rem] hover:text-white transition-colors decoration-0">
@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10">
               <div className="text-[0.85rem] text-white/60 text-center md:text-left">
                 <div className="footer_copyright-text">
-                  <p className="m-0">© 2025 SKILL SEVA. All rights reserved.</p>
+                  <p className="m-0">© {new Date().getFullYear()} SKILL SEVA. All rights reserved.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

@@ -15,8 +15,8 @@ export default function EventsPage() {
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
                 <div className="max-w-content mx-auto px-4 text-center relative z-10">
-                    <span className="text-[#A3A3A3] font-medium tracking-[0.2em] text-sm uppercase mb-6 block">
-                        UPCOMING EVENTS
+                    <span className="inline-block px-5 py-2.5 rounded-full bg-brand-accent/5 border border-brand-accent/20 text-brand-accent text-sm font-semibold tracking-wider uppercase mb-6">
+                        Upcoming Events
                     </span>
                     <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] font-normal text-text-primary mb-6">
                         Meetups, Classes & <br className="hidden md:block" />

@@ -4,12 +4,12 @@ import Image from 'next/image'
 
 export default function MomentsGrid() {
     const images = [
-        '/events/meetup-1.png',
-        '/events/meetup-2.png',
-        '/events/online-1.png',
-        '/events/online-2.png',
-        '/events/meetup-1.png',
-        '/events/meetup-2.png'
+        '/media/image1 (1).jpg',
+        '/media/image1 (2).jpg',
+        '/media/image1 (3).jpg',
+        '/media/image1 (2).jpg',
+        '/media/image1 (3).jpg',
+        '/media/image1 (1).jpg'
     ]
 
     return (
