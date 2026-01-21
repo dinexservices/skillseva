@@ -36,11 +36,11 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 z-[50] bg-white backdrop-blur-[100px] border-b border-black/6 w-full transition-all duration-300 ${isScrolled ? 'shadow-sm' : ''}`}>
+      <header className={`fixed top-0 z-[50] bg-white backdrop-blur-[100px]  w-full transition-all duration-300 ${isScrolled ? 'shadow-sm ' : ''}`}>
         <div className="max-w-[1200px] mx-auto px-4 md:px-6 py-4 flex items-center justify-between relative">
           <Link className={`inline-flex items-center transition-all duration-150 ease-out z-10 py-1 ${isScrolled ? 'transform-none' : 'scale-100'}`} href="/">
             <Image
-              className="w-auto h-[45px] md:h-[35px] object-contain origin-center transition-transform duration-200"
+              className="w-auto h-[35px] md:h-[40px] object-contain origin-center transition-transform duration-200"
               src="/SkillSeva Logo_3 (1).png"
               alt="SkillSeva logo"
               width={250}
