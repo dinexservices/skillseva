@@ -1,9 +1,7 @@
-'use client'
-
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { useState } from 'react'
+import { ModuleItem } from '@/components/ModuleItem'
+import { Metadata } from 'next'
 
 // Dummy Data
 const programData: Record<string, {
@@ -17,7 +15,7 @@ const programData: Record<string, {
     features: string[];
     mentors: { name: string; role: string; company: string }[];
 }> = {
-   
+
     'skillseva-mern-stack-cohort': {
         title: 'MERN Stack Cohort',
         subtitle: 'Master Full Stack Development',
@@ -252,39 +250,22 @@ Sunday:
     }
 }
 
-const ModuleItem = ({ module }: { module: { title: string; content: string } }) => {
-    const [isOpen, setIsOpen] = useState(false)
-
-    return (
-        <div className="border border-black/10 rounded-2xl bg-white overflow-hidden transition-all duration-300 hover:border-brand-accent/30 shadow-sm">
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="w-full text-left p-6 flex items-center justify-between bg-white hover:bg-gray-50/50 transition-colors gap-4 cursor-pointer"
-                aria-expanded={isOpen}
-            >
-                <h3 className="text-lg font-semibold text-brand-accent">
-                    {module.title}
-                </h3>
-                <span className={`shrink-0 transform transition-transform duration-300 text-brand-accent/80 ${isOpen ? 'rotate-180' : ''}`}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </span>
-            </button>
-            <div
-                className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                    }`}
-            >
-                <div className="overflow-hidden">
-                    <div className="px-6 pb-6 pt-0">
-                        <p className="text-text-secondary leading-relaxed text-[0.95rem] whitespace-pre-line">
-                            {module.content}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const program = programData[params.slug]
+    if (!program) {
+        return {
+            title: 'Cohort Not Found',
+        }
+    }
+    return {
+        title: program.title,
+        description: program.description,
+        openGraph: {
+            title: program.title,
+            description: program.description,
+            type: 'website',
+        }
+    }
 }
 
 export default function CohortDetailPage({ params }: { params: { slug: string } }) {
