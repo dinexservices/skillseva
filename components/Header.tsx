@@ -31,7 +31,7 @@ export default function Header() {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Check on mount
+    handleScroll() 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [pathname])
 
@@ -60,12 +60,12 @@ export default function Header() {
               <Link className={getLinkClass('/media')} href="/media">Media</Link>
               <Link className={getLinkClass('/jobs')} href="/jobs">Job Board</Link>
             </nav>
-            <Link
-              className="px-6 py-2.5 rounded-full bg-brand-accent text-white font-semibold text-[0.9rem] transition-all hover:bg-brand-accent-highlight cursor-pointer transform hover:-translate-y-0.5"
-              href="https://chat.whatsapp.com/I9HeXlWP75M4trxoG7cITO"
+            <button
+              className="px-6 py-2.5 rounded-full bg-brand-accent text-white font-semibold text-[0.9rem] transition-all hover:bg-brand-accent-highlight cursor-pointer"
+              onClick={() => setIsModalOpen(true)}
             >
               Community
-            </Link>
+            </button>
           </div>
 
           <button
@@ -90,10 +90,19 @@ export default function Header() {
 
               <Link className="text-2xl font-medium text-text-primary decoration-0" href="/jobs" onClick={() => setIsMenuOpen(false)}>Job Board</Link>
 
-              <Link href="https://chat.whatsapp.com/I9HeXlWP75M4trxoG7cITO" className="text-xl font-semibold text-brand-accent px-6 py-3 border border-brand-accent rounded-full mt-4 bg-transparent cursor-pointer" onClick={() => { setIsMenuOpen(false); setIsModalOpen(true); }}>Community</Link>
             </nav>
+            <button
+              className="px-6 mt-8 py-2.5 rounded-full bg-brand-accent text-white font-semibold text-[0.9rem] transition-all hover:bg-brand-accent-highlight cursor-pointer"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Community
+            </button>
           </div>
         </div>
+        <WhatsAppModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </header>
 
     </>
