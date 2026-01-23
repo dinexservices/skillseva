@@ -3,7 +3,7 @@ import MomentsGrid from '@/components/MomentsGrid'
 
 export const metadata = {
     title: 'Events | SkillSeva',
-    description: 'Join upcoming meetups, online classes, and workshops with SkillSeva community.',
+    description: 'Join upcoming meetups, and workshops with SkillSeva community.',
 }
 
 export default function EventsPage() {
@@ -19,7 +19,7 @@ export default function EventsPage() {
                         Upcoming Events
                     </span>
                     <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] font-normal text-text-primary mb-6">
-                        Meetups, Classes & <br className="hidden md:block" />
+                        Meetups &
                         <span className="text-brand-accent italic font-instrument">Workshops</span>
                     </h1>
                     <p className="text-lg md:text-[1.1rem] text-text-secondary max-w-[600px] mx-auto leading-relaxed">

@@ -2,6 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaXTwitter } from "react-icons/fa6";
+
+
 
 export default function Footer() {
   return (
@@ -65,22 +68,17 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-4">
                 <a
-                  href="#"
+                  href="https://x.com/skillseva?s=21"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 transition-all hover:bg-white/20 hover:-translate-y-0.5"
                 >
-                  <Image
-                    src="https://cdn.prod.website-files.com/63b304c11504f900a6192a63/680cd4478d32b6ad764df156_twitter%20icon.svg"
-                    alt="X / Twitter"
-                    width={20}
-                    height={20}
-                    className="w-5 h-5 brightness-0 invert opacity-80 transition-opacity hover:opacity-100"
-                    unoptimized
-                  />
+                  <FaXTwitter size={20} className='text-white' />
+            
+                
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/skillseva/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 transition-all hover:bg-white/20 hover:-translate-y-0.5"
@@ -95,7 +93,7 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/skillseva.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 transition-all hover:bg-white/20 hover:-translate-y-0.5"
@@ -110,7 +108,7 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/share/1KHbTS9Hu3/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 transition-all hover:bg-white/20 hover:-translate-y-0.5"

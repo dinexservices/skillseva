@@ -7,9 +7,16 @@ export default function MomentsGrid() {
         '/media/image1 (1).jpg',
         '/media/image1 (2).jpg',
         '/media/image1 (3).jpg',
-        '/media/image1 (2).jpg',
-        '/media/image1 (3).jpg',
-        '/media/image1 (1).jpg'
+        '/media/image1 (4).jpg',
+        '/media/image1 (5).jpg',
+        '/media/image1 (6).jpg',
+        '/media/image1 (7).jpg',
+        '/media/image1 (8).jpg',
+        '/media/image1 (9).jpg',
+        '/media/image1 (10).jpg',
+        '/media/image1 (11).jpg',
+    
+       
     ]
 
     return (
@@ -27,14 +34,13 @@ export default function MomentsGrid() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="columns-1 md:columns-2 lg:columns-3 gap-6 md:gap-8 space-y-6 md:space-y-8">
                     {images.map((src, index) => (
-                        <div key={index} className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden group">
-                            <Image
+                        <div key={index} className="break-inside-avoid relative w-full rounded-[24px] overflow-hidden group">
+                            <img
                                 src={src}
                                 alt={`Life at SkillSeva moment ${index + 1}`}
-                                fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                className="w-full h-auto block object-cover transition-transform duration-500 group-hover:scale-105"
                             />
                         </div>
                     ))}

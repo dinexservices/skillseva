@@ -1,19 +1,22 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ModuleItem } from '@/components/ModuleItem'
+import Image from 'next/image'
 import { Metadata } from 'next'
 
 // Dummy Data
 const programData: Record<string, {
     title: string;
     subtitle: string;
+    link:string;
     description: string;
     duration: string;
+    button:string;
     format: string;
     price: string;
     modules: { title: string; content: string }[];
     features: string[];
-    mentors: { name: string; role: string; company: string }[];
+    mentors: { name: string; role: string; company: string,image:string }[];
 }> = {
 
     'skillseva-mern-stack-cohort': {
@@ -21,41 +24,158 @@ const programData: Record<string, {
         subtitle: 'Master Full Stack Development',
         description: 'A comprehensive program covering Web Fundamentals, JavaScript Core, Git, and the complete MERN stack to build production-ready applications.',
         duration: '12 Weeks',
+        link:"#",
+        button:"coming soon",
         format: 'Live',
-        price: '₹4,500 + 18% GST',
+        price: '₹5310',
         modules: [
-            {
-                title: 'Module 1: WEB & JAVASCRIPT FOUNDATION',
-                content: `This week, we move from Using the web to Understanding how the web works. Mentor tell: "Before writing code, you must understand where your code lives."
-                
-                How the Web Works: When you open a website, three things talk to each other: Browser (Where users interact), Server (Where logic lives), and HTTP (How they communicate). Frontend and backend are just two sides of the same conversation.
-                
-                Browser vs Server: Browser runs HTML, CSS, JavaScript and handles UI. Server stores data, processes requests, and sends responses. Frontend asks. Backend answers. Mentor tell: "If you don’t understand this flow, full-stack will always feel confusing."
-                
-                HTML Basics (Semantic Tags): HTML gives structure to the web (header, nav, section, footer). Good HTML is readable even without CSS.
-                
-                Intro to CSS: CSS controls Layout, Colors, Spacing, Responsiveness. HTML is the skeleton. CSS is the skin. Mentor tell: "Don’t rush animations. First master layout and spacing."
-                
-                JavaScript Basics: JavaScript adds logic (Variables, Data types, Basic operations). JavaScript makes the page think.
-                
-                Day 1 Practical: Mini Project - Create basic portfolio structure, Apply CSS styling, Use JS variables.`
-            },
-            {
-                title: 'Module 2: JAVASCRIPT CORE + GIT',
-                content: `Mentor tell: "JavaScript is not hard. It’s misunderstood."
-                
-                Functions: Reusable blocks of logic. Reduce repetition, Improve readability, Build real applications. If you understand functions, you understand programming.
-                
-                Arrays & Objects: List of values and Key–value data. Real-world data always lives in arrays and objects.
-                
-                Loops: Repeat tasks, Process data, Automate logic. Computers are fast because they repeat well.
-                
-                map / filter / reduce: Modern JavaScript tools to Transform data, Filter results, Compute values. These are used daily in real projects.
-                
-                Git & GitHub Basics: Why Git? Track changes, Collaborate safely, Roll back mistakes. You’ll learn: Git init, Commit, Push to GitHub. Code without Git is not professional code.
-                
-                Day 2 Practical: Console-based JS practice, Push code to GitHub.`
-            }
+         {
+  title: 'Week 1: WEB & JAVASCRIPT FOUNDATION',
+  content: `- How the web works (Browser, Server, HTTP)
+- HTML basics and semantic structure
+- CSS fundamentals and styling
+- JavaScript basics (variables, data types)
+- Git and GitHub fundamentals
+- Version control concepts
+- JavaScript functions
+- Arrays and objects
+- Loops
+- map / filter / reduce
+`
+},
+{
+  title: 'Week 2: ADVANCED JAVASCRIPT',
+  content: `- Scope and closures
+- Currying and higher-order functions
+- Call, Apply, Bind
+- Promises
+- DOM manipulation
+- Events and event handling
+- JavaScript Event Loop
+- async / await
+- ES6 modules
+`
+},
+{
+  title: 'Week 3: REACT FUNDAMENTALS',
+  content: `- Why React
+- JSX syntax
+- React Fiber (concept)
+- Components and component structure
+- Props and state
+- State lifting
+- Introduction to React Hooks
+- useState
+- useEffect
+- useReducer
+- useRef
+- useMemo
+- useCallback
+- Component lifecycle (conceptual)
+`
+},
+{
+  title: 'Week 4: FORMS, ROUTING & UI',
+  content: `- Controlled components
+- Form handling concepts
+- Formik basics
+- Validation fundamentals
+- Yup validation
+- React Router
+- Protected routes
+- State flow in multi-page apps
+- CSS Modules
+- Tailwind CSS
+- Responsive design principles
+`
+},
+{
+  title: 'Week 5: ADVANCED REACT & FRONTEND ARCHITECTURE',
+  content: `- Context API
+- State management concepts (Context / Zustand)
+- Custom hooks
+- Performance optimization basics
+- React best practices
+- Frontend project structure
+- Scalable UI architecture
+`
+},
+{
+  title: 'Week 6: NODE.JS & EXPRESS BASICS',
+  content: `- Introduction to Node.js
+- Node runtime and use cases
+- NPM fundamentals
+- Project setup
+- Express.js introduction
+- Routing in Express
+- Middleware concepts
+- Request and Response lifecycle
+`
+},
+{
+  title: 'Week 7: AUTHENTICATION & BACKEND ARCHITECTURE',
+  content: `- Authentication fundamentals
+- JWT authentication
+- Password hashing with bcrypt
+- Authentication flow
+- Role-based access control
+- MVC architecture
+- Service pattern
+- Folder structure best practices
+- Centralized error handling
+`
+},
+{
+  title: 'Week 8: API VALIDATION & BACKEND PROJECT',
+  content: `- Input validation strategies
+- API best practices
+- Production-ready API structure
+- Auth + CRUD backend architecture
+- Admin vs User roles (conceptual)
+`
+},
+{
+  title: 'Week 9: DATABASES & ORM',
+  content: `- MongoDB fundamentals
+- NoSQL concepts
+- PostgreSQL fundamentals
+- Relational database concepts
+- ORM concepts
+- Prisma overview
+- Database integration with backend
+`
+},
+{
+  title: 'Week 10: FULL STACK INTEGRATION & DEVOPS',
+  content: `- Frontend and Backend integration
+- API consumption in frontend
+- Token handling
+- Error and loading state management
+- Docker fundamentals
+- Dockerizing full-stack applications
+- CI/CD concepts
+`
+},
+{
+  title: 'Week 11: CAPSTONE PROJECT – LMS',
+  content: `- Full-stack application development
+- Monorepo architecture
+- PostgreSQL integration
+- Authentication system
+- Scalable application architecture
+`
+},
+{
+  title: 'Week 12: COHORT WRAP-UP & INTERVIEW PREPARATION',
+  content: `
+- Course recap
+- Interview preparation strategies
+- Resume and portfolio tips
+- Real-world project discussion
+- Career guidance
+`
+}
+
         ],
         features: [
             'Live Interactive Sessions',
@@ -65,8 +185,8 @@ const programData: Record<string, {
             'Certificate of Completion'
         ],
         mentors: [
-            { name: 'Aditya Raj', role: 'Full Stack Developer', company: 'TechStart' },
-            { name: 'Sneha Gupta', role: 'Senior Engineer', company: 'Innovate' },
+            { name: 'Aditya Raj', role: 'Full Stack Developer', company: 'TechStart',image: '/mentors/aditya.png' },
+            { name: 'Sneha Gupta', role: 'Senior Engineer', company: 'Innovate',image: '/mentors/sneha.png' },
         ]
     },
     'skillseva-ui-ux-design-cohort': {
@@ -74,19 +194,19 @@ const programData: Record<string, {
         subtitle: 'Master Design Thinking & User Experience',
         description: 'A comprehensive 12-week program covering everything from design basics, user research, and wireframing to advanced prototyping and career preparation.',
         duration: '12 Weeks',
+        button:"Apply for Cohort",
         format: 'Live',
-        price: '₹4,500 + 18% GST',
+        link:'https://rzp.io/rzp/EgXNjbJ',
+        price: '₹5310',
         modules: [
             {
                 title: 'Week 1: DESIGN & UX BASICS',
-                content: `Saturday:
+                content: `
 - Course Overview and expectations
 - What is design
 - Design vs art
 - Design in everyday life
 - UX, UI and product design overview
-
-Sunday:
 - UX vs UI roles
 - UX mindset
 - Design thinking process
@@ -94,37 +214,31 @@ Sunday:
             },
             {
                 title: 'Week 2: UX FOUNDATION & THINKING',
-                content: `Saturday:
+                content: `
 - User-centered design
 - Problem-first approach
 - Empathy in design
 - Introduction to user research
-
-Sunday:
 - Research vs assumptions
 - Qualitative vs quantitative research
 - Mini research activity`
             },
             {
                 title: 'Week 3: USER RESEARCH & EMPATHY',
-                content: `Saturday:
+                content: `
 - Persona creation exercise
 - Empathy mapping
 - User personas
-
-Sunday:
 - 5 Whys technique
 - Problem statement framing
 - Research insights`
             },
             {
                 title: 'Week 4: JOURNEYS & ANALYSIS',
-                content: `Saturday:
+                content: `
 - User journey mapping
 - Touchpoints
 - Emotions and pain points
-
-Sunday:
 - Competitive analysis
 - Direct vs indirect competitors
 - UX comparison matrix
@@ -132,13 +246,11 @@ Sunday:
             },
             {
                 title: 'Week 5: UX LAWS & USABILITY',
-                content: `Saturday:
+                content: `
 - UX laws
 - Hick’s Law
 - Fitts’s Law
 - Jakob’s Law
-
-Sunday:
 - Miller’s Law
 - Gestalt’s laws
 - 3-Click Rule
@@ -146,12 +258,10 @@ Sunday:
             },
             {
                 title: 'Week 6: Usability & Information Structure',
-                content: `Saturday:
+                content: `
 - Affordance, Signifiers & Feedback
 - Usability principles with real-world examples
 - Common usability mistakes
-
-Sunday:
 - Information Architecture (IA)
 - Sitemaps & User flows
 - Usability issues identification
@@ -159,48 +269,40 @@ Sunday:
             },
             {
                 title: 'Week 7: Wireframing & Layout Thinking',
-                content: `Saturday:
+                content: `
 - Wireframing basics
 - Low vs High fidelity
 - Layout thinking
-
-Sunday:
 - Card sorting (intro + use cases)
 - Wireframe practice (guided)
 - Critique & iteration`
             },
             {
                 title: 'Week 8: UI Foundations & Visual Design',
-                content: `Saturday:
+                content: `
 - Visual design fundamentals
 - Visual hierarchy
 - Spacing & alignment
-
-Sunday:
 - Typography
 - Readability
 - UI consistency principles`
             },
             {
                 title: 'Week 9: Colour, Grid & Accessibility Basics',
-                content: `Saturday:
+                content: `
 - Colour theory
 - Colour psychology
 - Accessibility contrast
-
-Sunday:
 - Grid systems
 - 8pt grid
 - Layout practice with grid`
             },
             {
                 title: 'Week 10: Responsive, Platforms & Accessibility',
-                content: `Saturday:
+                content: `
 - Responsive vs Adaptive design
 - Mobile-first approach
 - Web vs App UX
-
-Sunday:
 - Accessibility fundamentals
 - Disabilities overview
 - WCAG basics
@@ -208,13 +310,11 @@ Sunday:
             },
             {
                 title: 'Week 11: Emotional UX, Systems & Product Thinking',
-                content: `Saturday:
+                content: `
 - Emotional design
 - Human emotions in UX
 - Hooked Model
-- Maslow’s hierarchy of needs
-
-Sunday:
+- Maslow’s hierarchy of need
 - Design systems (basics)
 - Components & consistency
 - Product thinking
@@ -222,13 +322,11 @@ Sunday:
             },
             {
                 title: 'Week 12: Prototyping, Testing & Career Prep',
-                content: `Saturday:
+                content: `
 - Prototyping
 - Clickable prototypes
 - Micro-interactions
 - Usability testing basics
-
-Sunday:
 - Feedback analysis & iteration
 - UX case study structure
 - Storytelling in case studies
@@ -244,8 +342,8 @@ Sunday:
             'Certificate of Completion'
         ],
         mentors: [
-            { name: 'Riya Patel', role: 'Senior Product Designer', company: 'Swiggy' },
-            { name: 'Amit Verma', role: 'UX Lead', company: 'Microsoft' },
+            { name: 'Garima Mehra', role: 'Mentor', company: 'SkillSeva',image: '/mentors/garima.jpg' },
+            { name: 'Shaily Goel', role: 'UX Lead', company: 'Ameriprise',image: '/mentors/shaily.jpg' },
         ]
     }
 }
@@ -323,9 +421,13 @@ export default function CohortDetailPage({ params }: { params: { slug: string } 
                                 <div key={idx} className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-black/10 shadow-sm">
                                     <div className="w-16 h-16 rounded-full bg-secondary overflow-hidden shrink-0">
                                         {/* Placeholder for now */}
-                                        <div className="w-full h-full bg-brand-accent/10 flex items-center justify-center text-brand-accent font-bold text-xl">
-                                            {mentor.name[0]}
-                                        </div>
+                                        <Image
+                                            src={mentor.image}
+                                            alt={mentor.name}
+                                            width={64}
+                                            height={64}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-text-primary">{mentor.name}</h4>
@@ -360,8 +462,8 @@ export default function CohortDetailPage({ params }: { params: { slug: string } 
                             ))}
                         </div>
 
-                        <Link href="/events/register?title=Cohort%20Application" className="block w-full py-4 rounded-full bg-brand-accent text-white font-semibold text-center hover:bg-brand-accent-highlight transition-all shadow-brand hover:shadow-lg hover:-translate-y-0.5">
-                            Apply for Cohort
+                        <Link href={program.link} className="block w-full py-4 rounded-full bg-brand-accent text-white font-semibold text-center hover:bg-brand-accent-highlight transition-all shadow-brand hover:shadow-lg hover:-translate-y-0.5">
+                          {program.button}
                         </Link>
 
                         <p className="text-xs text-center text-text-muted mt-4">
@@ -374,9 +476,9 @@ export default function CohortDetailPage({ params }: { params: { slug: string } 
                         <p className="text-sm text-text-secondary mb-4">
                             Book a free 15-minute consultation call with our admission team.
                         </p>
-                        <button className="text-sm font-semibold text-brand-accent hover:underline">
+                        <a href="https://calendly.com/skillsevaofficial/30min" className="text-sm font-semibold text-brand-accent hover:underline">
                             Schedule a Call →
-                        </button>
+                        </a>
                     </div>
                 </div>
 

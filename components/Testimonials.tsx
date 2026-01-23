@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import VideoModal from './VideoModal'
 
@@ -9,7 +9,23 @@ const testimonialImage = "/Testimonial.png"
 
 export default function Testimonials() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+
+  const checkScroll = () => {
+    if (scrollContainerRef.current) {
+      setCanScrollLeft(scrollContainerRef.current.scrollLeft > 0)
+    }
+  }
+
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (container) {
+      container.addEventListener('scroll', checkScroll)
+      checkScroll() // Initial check
+      return () => container.removeEventListener('scroll', checkScroll)
+    }
+  }, [])
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -23,46 +39,63 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      videoUrl: 'https://drive.google.com/file/d/1KPdQVDswI7ksnQQvU4cRUzApsDH-ruqR/preview',
+      videoUrl: 'https://youtube.com/embed/tLkjJ_tIJQY',
+      youtubeId: 'tLkjJ_tIJQY',
       alt: 'Student Testimonial Video 1',
-      image: testimonialImage,
+
     },
     {
-      videoUrl: 'https://drive.google.com/file/d/1FKTRv-bhki3spsf5Hu0SZIl2IEmHjxqN/preview',
+      videoUrl: 'https://youtube.com/embed/r3gYh9T3iP0',
+      youtubeId: 'r3gYh9T3iP0',
+      // videoUrl: 'https://drive.google.com/file/d/1FKTRv-bhki3spsf5Hu0SZIl2IEmHjxqN/preview',
       alt: 'Student Testimonial Video 2',
       image: testimonialImage,
     },
     {
-      videoUrl: 'https://drive.google.com/file/d/1PzsOPGuJ3phNdEN_D6WjI2KHsIFd4exu/preview',
+      videoUrl: 'https://youtube.com/embed/vmPcUlwrPog',
+      youtubeId: 'vmPcUlwrPog',
+      // videoUrl: 'https://drive.google.com/file/d/1PzsOPGuJ3phNdEN_D6WjI2KHsIFd4exu/preview',
       alt: 'Student Testimonial Video 3',
-      image: testimonialImage,
+
     },
     {
-      videoUrl: 'https://drive.google.com/file/d/1GPu0kkkiv4uSk2OXot6f0QdRYP7KgFys/preview',
+      videoUrl: 'https://youtube.com/embed/UtDtwdU_h0I',
+      youtubeId: 'UtDtwdU_h0I',
+      // videoUrl: 'https://drive.google.com/file/d/1GPu0kkkiv4uSk2OXot6f0QdRYP7KgFys/preview',
       alt: 'Student Testimonial Video 4',
-      image: testimonialImage,
+
     },
     {
-      videoUrl: 'https://drive.google.com/file/d/1J-ZH2q0lro0lC5WaQxd6VEa1oFdOfeZ0/preview',
+      videoUrl: 'https://youtube.com/embed/GxwhzDcHJe0',
+      youtubeId: 'GxwhzDcHJe0',
+      // videoUrl: 'https://drive.google.com/file/d/1J-ZH2q0lro0lC5WaQxd6VEa1oFdOfeZ0/preview',
       alt: 'Student Testimonial Video 5',
-      image: testimonialImage,
+
     },
     {
-      videoUrl: 'https://drive.google.com/file/d/1_4MDPm1j5vBowZAijljZ1BA7PTilvrsj/preview',
+      videoUrl: 'https://youtube.com/embed/c5WAKQBkuL4',
+      youtubeId: 'c5WAKQBkuL4',
+      // videoUrl: 'https://drive.google.com/file/d/1_4MDPm1j5vBowZAijljZ1BA7PTilvrsj/preview',
       alt: 'Student Testimonial Video 6',
-      image: testimonialImage,
+
     },
     {
-      videoUrl: 'https://drive.google.com/file/d/1Mm23SnnEnSqOm5otROdKWL_nyIl9IoOM/preview',
+      videoUrl: 'https://youtube.com/embed/54rxe0n6cng',
+      youtubeId: '54rxe0n6cng',
+      // videoUrl: 'https://drive.google.com/file/d/1Mm23SnnEnSqOm5otROdKWL_nyIl9IoOM/preview',
       alt: 'Student Testimonial Video 7',
-      image: testimonialImage,
+
     },
     {
-      videoUrl: 'https://drive.google.com/file/d/1yOtlRmR4S6wbFrUoCdSMysA1EeKRqyAu/preview',
+      videoUrl: 'https://youtube.com/embed/-18EA__j2wQ',
+      youtubeId: '-18EA__j2wQ',
+      // videoUrl: 'https://drive.google.com/file/d/1yOtlRmR4S6wbFrUoCdSMysA1EeKRqyAu/preview',
       alt: 'Student Testimonial Video 8',
-      image: testimonialImage,
+
     }
   ]
+
+
 
   return (
     <>
@@ -81,7 +114,8 @@ export default function Testimonials() {
             {/* Left Button - Hidden on mobile, visible on md+ */}
             <button
               onClick={() => scroll('left')}
-              className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white rounded-full shadow-lg border border-gray-100/50 text-brand-accent hover:scale-110 transition-all focus:outline-none cursor-pointer"
+              className={`hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white rounded-full shadow-lg border border-gray-100/50 text-brand-accent hover:scale-110 transition-all focus:outline-none cursor-pointer ${!canScrollLeft ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                }`}
               aria-label="Scroll left"
             >
               <FaChevronLeft className="w-5 h-5" />
@@ -100,41 +134,45 @@ export default function Testimonials() {
               ref={scrollContainerRef}
               className="flex gap-8 w-full overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden px-4"
             >
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="relative flex-none w-[280px] aspect-[9/16] snap-center cursor-pointer group transition-transform duration-300 hover:-translate-y-2"
-                  onClick={() => setActiveVideo(testimonial.videoUrl)}
-                >
-                  {/* Main Card Shape */}
-                  <div className="absolute inset-0 bg-[#59279D] rounded-[24px] overflow-hidden">
-                    {/* Cut corner effect via a white rotated element */}
-                    <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-white rotate-45 z-10"></div>
+              {testimonials.map((testimonial, index) => {
+                const youtubeId = testimonial.youtubeId;
+                const thumbnailSrc = youtubeId
+                  ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
+                  : testimonial.image || testimonialImage;
 
-                    {/* Branded 'F' */}
-                    <div className="absolute top-6 left-6 z-20">
-                      <span className="text-white font-bold text-xl opacity-90">F</span>
-                    </div>
+                return (
+                  <div
+                    key={index}
+                    className="relative flex-none w-[280px] aspect-[9/16] snap-center cursor-pointer group transition-transform duration-300 hover:-translate-y-2"
+                    onClick={() => setActiveVideo(testimonial.videoUrl)}
+                  >
+                    {/* Main Card Shape */}
+                    <div className="absolute inset-0 bg-[#59279D] rounded-[24px] overflow-hidden">
 
-                    {/* Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center z-20">
-                      <div className="w-16 h-16 rounded-full border-2 border-white/30 flex items-center justify-center bg-white/10 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-white/20">
-                        <svg className="w-6 h-6 fill-white ml-1" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
+                      {/* Thumbnail Image */}
+                      <img
+                        src={thumbnailSrc}
+                        alt={testimonial.alt}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+
+                      {/* Overlay for better text/icon visibility */}
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+
+                      {/* Play Button */}
+                      <div className="absolute inset-0 flex items-center justify-center z-20">
+                        <div className="w-16 h-16 rounded-full border-2 border-white/30 flex items-center justify-center bg-white/10 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-white/20">
+                          <svg className="w-6 h-6 fill-white ml-1" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Background Image - very subtle overlay */}
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.alt}
-                      fill
-                      className="object-cover opacity-10 mix-blend-overlay"
-                    />
+
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
