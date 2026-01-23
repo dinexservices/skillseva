@@ -7,44 +7,24 @@ import { useState } from 'react'
 export default function Programs() {
   const [activeTab, setActiveTab] = useState('On-going')
 
-  const cohorts = [
-
-    {
-      title: 'MERN Stack Cohort',
-      description: 'Master Full Stack Development with Web Fundamentals, JavaScript, and MERN stack.',
-      image: '/245f22a0a73a11804301eee384478f1aaf0d8407.png',
-      link: '/cohorts/skillseva-mern-stack-cohort',
-      alt: 'MERN Stack Cohort'
-    },
+const ongoing = [  
     {
       title: 'UI/UX Design Cohort',
       description: 'Master Design Thinking & User Experience with our comprehensive 12-week program.',
-      image: '/245f22a0a73a11804301eee384478f1aaf0d8407.png',
+        image: '/shaily.png',
+    
       link: '/cohorts/skillseva-ui-ux-design-cohort',
       alt: 'UI/UX Design Cohort'
     }
   ]
 
-
-  const fellowships = [
-    {
-      title: 'The VC Fellowship',
-      description: 'Get insider experience in venture capital',
-      image: '/245f22a0a73a11804301eee384478f1aaf0d8407.png',
-      link: 'https://www.hirevc.com/',
-      alt: 'The VC Fellowship | HireVC',
-      external: true
-    },
-    {
-      title: 'VC Analyst Fellowship',
-      description: 'Develop analytical skills for startup investments',
-      image: '/245f22a0a73a11804301eee384478f1aaf0d8407.png',
-      link: 'https://www.hirevc.com/vc-analyst-program',
-      alt: 'VC Analyst Fellowship',
-      external: true
-    }
-  ]
-
+   const upcoming= [  {
+      title: 'MERN Stack Cohort',
+      description: 'Master Full Stack Development with Web Fundamentals, JavaScript, and MERN stack.',
+      image: '/fullstack.png',
+      link: '/cohorts/skillseva-mern-stack-cohort',
+      alt: 'MERN Stack Cohort'
+    }]
 
 
   return (
@@ -96,7 +76,7 @@ export default function Programs() {
                 <div className="mt-8">
                   {activeTab === 'On-going' && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative border border-[#f5f7ff]/10">
-                      {cohorts.map((program, index) => (
+                      {ongoing.map((program, index) => (
                         <div key={index} className="w-full relative h-full">
                           <div className="grid gap-6 p-6 bg-white/80 border-2 border-black/12 rounded-2xl transition-all duration-200 hover:-translate-y-1 relative z-0 h-full content-between">
                             <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-[#f5f7ff]/5">
@@ -128,7 +108,7 @@ export default function Programs() {
 
                   {activeTab === 'Upcoming' && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative border border-[#f5f7ff]/10">
-                      {fellowships.map((program, index) => (
+                      {upcoming.map((program, index) => (
                         <div key={index} className="w-full relative h-full">
                           <div className="grid gap-6 p-6 bg-white/80 border-2 border-black/12 rounded-2xl transition-all duration-200 hover:-translate-y-1 relative z-0 h-full content-between">
                             <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-[#f5f7ff]/5">
@@ -150,8 +130,8 @@ export default function Programs() {
                                 <Link
                                   href={program.link}
                                   className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-[#59279D] to-[#7c4fd6] text-white shadow-none hover:-translate-y-0.5"
-                                  target={program.external ? '_blank' : undefined}
-                                  rel={program.external ? 'noopener noreferrer' : undefined}
+                          
+                      
                                 >
                                   View programs
                                 </Link>

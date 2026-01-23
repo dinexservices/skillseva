@@ -25,7 +25,7 @@ export default function Hero() {
 
   return (
     <section
-      className={`max-w-full mx-auto pt-36 px-4 pb-20 flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-600 ease-out relative ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
+      className={`max-w-full mx-auto pt-16 md:pt-36 px-4 pb-20 flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-600 ease-out relative ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
       id="home"
     >
       {/* Mouse-following Gradient */}

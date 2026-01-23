@@ -59,9 +59,10 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
                   height="100%"
                   src={`${videoUrl}?autoplay=1`}
                   title="YouTube video player"
-                  
+               
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
+    
                   className="w-full h-full"
                 ></iframe>
                     {/* <iframe

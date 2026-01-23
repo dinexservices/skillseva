@@ -63,7 +63,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10">
               <div className="text-[0.85rem] text-white/60 text-center md:text-left">
                 <div className="footer_copyright-text">
-                  <p className="m-0">© {new Date().getFullYear()} SKILL SEVA. All rights reserved.</p>
+                  <p className="m-0">© {new Date().getFullYear()} SKILLSEVA. All rights reserved.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
