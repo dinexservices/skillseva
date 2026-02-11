@@ -2,29 +2,45 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+interface Cohort {
+    _id: string
+    title: string
+    description: string
+    image: string
+    alt: string
+    status: 'ongoing' | 'upcoming'
+}
 
 export default function OurCohortPage() {
     const [activeTab, setActiveTab] = useState('On-going')
+    const [ongoing, setOngoing] = useState<Cohort[]>([])
+    const [upcoming, setUpcoming] = useState<Cohort[]>([])
+    const [loading, setLoading] = useState(true)
 
-  const ongoing = [  
-    {
-      title: 'UI/UX Design Cohort',
-      description: 'Master Design Thinking & User Experience with our comprehensive 12-week program.',
-        image: '/shaily.png',
-    
-      link: '/cohorts/skillseva-ui-ux-design-cohort',
-      alt: 'UI/UX Design Cohort'
+    useEffect(() => {
+        fetchCohorts()
+    }, [])
+
+    const fetchCohorts = async () => {
+        try {
+            const response = await fetch('/api/admin/cohorts')
+            const data = await response.json()
+            
+            if (data.success) {
+                const ongoingCohorts = data.data.filter((c: Cohort) => c.status === 'ongoing')
+                const upcomingCohorts = data.data.filter((c: Cohort) => c.status === 'upcoming')
+                
+                setOngoing(ongoingCohorts)
+                setUpcoming(upcomingCohorts)
+            }
+            setLoading(false)
+        } catch (error) {
+            console.error('Failed to fetch cohorts:', error)
+            setLoading(false)
+        }
     }
-  ]
-
-   const upcoming= [  {
-      title: 'MERN Stack Cohort',
-      description: 'Master Full Stack Development with Web Fundamentals, JavaScript, and MERN stack.',
-      image: '/fullstack.png',
-      link: '/cohorts/skillseva-mern-stack-cohort',
-      alt: 'MERN Stack Cohort'
-    }]
 
 
 
@@ -68,7 +84,11 @@ export default function OurCohortPage() {
                             </div>
 
                             <div className="mt-8">
-                                {activeTab === 'On-going' && (
+                                {loading ? (
+                                    <div className="text-center py-12">
+                                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-accent mx-auto"></div>
+                                    </div>
+                                ) : activeTab === 'On-going' && (
                                     ongoing.length > 0 ? (
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
                                             {ongoing.map((program, index) => (
@@ -90,7 +110,7 @@ export default function OurCohortPage() {
                                                                 <p className="text-[0.95rem] leading-[1.5] text-text-secondary m-0">{program.description}</p>
                                                             </div>
                                                             <div className="shrink-0 w-full md:w-auto">
-                                                                <Link href={program.link} className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-brand-accent to-brand-accent-highlight text-white shadow-none hover:-translate-y-0.5">
+                                                                <Link href={`/cohorts/${program._id}`} className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-brand-accent to-brand-accent-highlight text-white shadow-none hover:-translate-y-0.5">
                                                                     View Details
                                                                 </Link>
                                                             </div>
@@ -129,7 +149,7 @@ export default function OurCohortPage() {
                                                             </div>
                                                             <div className="shrink-0 w-full md:w-auto">
                                                                 <Link
-                                                                    href={program.link}
+                                                                    href={`/cohorts/${program._id}`}
                                                                     className="inline-flex items-center justify-center w-full md:w-auto p-[0.85rem_1.75rem] rounded-full font-semibold text-base no-underline transition-all duration-200 border-none cursor-pointer bg-gradient-to-br from-brand-accent to-brand-accent-highlight text-white shadow-none hover:-translate-y-0.5"
                                                                    
                                                                 >

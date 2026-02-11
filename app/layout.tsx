@@ -56,11 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={plusJakartaSans.className} style={{ margin: 0, padding: 0 }}>
-        <SmoothScroll>
-          <Header />
-          {children}
-          <Footer />
-        </SmoothScroll>
+        {children}
       </body>
     </html>
   )
